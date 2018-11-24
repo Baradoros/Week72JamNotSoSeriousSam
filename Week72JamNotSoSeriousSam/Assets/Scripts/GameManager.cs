@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour {
     public static GameManager manager;
 
     void Start() {
+        // Make a change
 
         // Ensure there can only be one GameManager in a scene
         if (manager == null) {
