@@ -47,7 +47,6 @@ public class PlayerController : MonoBehaviour {
 
             nextFire = Time.time + fireDelay; //Adding firing delay
             Instantiate(bullet, bulletSpawn.position, GetAngleToMouse(bulletSpawn.position, GetMousePosition())); //Firing bullet here
-            Debug.Log("Angle to mouse: " + GetAngleToMouse(bulletSpawn.position, GetMousePosition()));
             
         } //End of if statement
     } //End of Update
