@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour {
 
     // Public referrence to this script so any GameObject can call these methods
     public static GameManager manager;
+    public static int score;
 
     void Start() {
 
@@ -25,7 +26,13 @@ public class GameManager : MonoBehaviour {
         }
     }
 
+    private void Update() {
+        CheckForWin();
+    }
 
+    private void CheckForWin() {
+
+    }
     #region Utility Methods
     private IEnumerator LoadSceneDelayed(float time) {
         yield return new WaitForSeconds(time);

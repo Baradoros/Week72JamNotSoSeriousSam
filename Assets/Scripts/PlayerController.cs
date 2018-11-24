@@ -64,7 +64,7 @@ public class PlayerController : MonoBehaviour {
     {
         if (canMove)
         {
-            rb2d.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * speed, Input.GetAxisRaw("Vertical") * verticalSpeedModifier);
+            rb2d.velocity = new Vector2(Input.GetAxis("Horizontal") * speed, Input.GetAxis("Vertical") * verticalSpeedModifier);
         }
 
         // Change animation
