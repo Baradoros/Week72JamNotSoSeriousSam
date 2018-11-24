@@ -47,6 +47,7 @@ public class PlayerController : MonoBehaviour {
 
             nextFire = Time.time + fireDelay; //Adding firing delay
             Instantiate(bullet, bulletSpawn.position, GetAngleToMouse(bulletSpawn.position, GetMousePosition())); //Firing bullet here
+            Debug.Log("Angle to mouse: " + GetAngleToMouse(bulletSpawn.position, GetMousePosition()));
             
         } //End of if statement
     } //End of Update
@@ -90,8 +91,9 @@ public class PlayerController : MonoBehaviour {
 
         // Find angle in radians between obj and mouse
         // convert radians to degrees
+        // clamp rotation values between -30 and 30 degrees to prevent being able to shoot at odd angles
         // convert degrees to quaternion
-        return Quaternion.Euler(0, 0, Mathf.Atan2(obj.y - mouse.y, obj.x - mouse.x) * Mathf.Rad2Deg);
+        return Quaternion.Euler(0, 0, Mathf.Clamp(Mathf.Atan2(obj.y - mouse.y, obj.x - mouse.x) * Mathf.Rad2Deg, -30, 30));
     }
     #endregion
 }

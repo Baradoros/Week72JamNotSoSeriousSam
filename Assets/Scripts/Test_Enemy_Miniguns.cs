@@ -86,7 +86,6 @@ public class Test_Enemy_Miniguns : MonoBehaviour {
         starting_Point_Coordinates = new Vector2(starting_Points.enemy_Starting_Points[starting_Point].position.x,
             starting_Points.enemy_Starting_Points[starting_Point].position.y); //Getting the coordinates here
 
-        Debug.Log("Starting point co-ordinates are " + starting_Point_Coordinates);
 
         movementDirection = Vector2.MoveTowards(thisRigidbody2D.position, starting_Point_Coordinates, 2.5f * Time.deltaTime); //Moving towards starting point here
         thisRigidbody2D.MovePosition(movementDirection); //Moving enemy to starting point here
@@ -110,7 +109,6 @@ public class Test_Enemy_Miniguns : MonoBehaviour {
         random_Point_Coordinates = new Vector2(random_Points.enemy_Random_Points[random_Point].position.x,
             random_Points.enemy_Random_Points[random_Point].position.y); //Getting the coordinates here
 
-        Debug.Log("Random point co-ordinates are " + random_Point_Coordinates);
 
         movementDirection = Vector2.MoveTowards(thisRigidbody2D.position, random_Point_Coordinates, 2.5f * Time.deltaTime); //Moving towards random point here
         thisRigidbody2D.MovePosition(movementDirection); //Moving enemy to random point here
