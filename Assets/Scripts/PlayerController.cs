@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour {
     private float verticalSpeedModifier;
     private Animator anim;
     private Rigidbody2D rb2d;
+    private AudioSource audio;
     private float nextFire = 0; 
     #endregion
 
@@ -34,6 +35,7 @@ public class PlayerController : MonoBehaviour {
     {
         rb2d = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        audio = GetComponent<AudioSource>();
         verticalSpeedModifier = speed * 0.8f;
     } //End of Start
 
@@ -47,9 +49,10 @@ public class PlayerController : MonoBehaviour {
 
             nextFire = Time.time + fireDelay; //Adding firing delay
             Instantiate(bullet, bulletSpawn.position, GetAngleToMouse(bulletSpawn.position, GetMousePosition())); //Firing bullet here
+            audio.Play();
             
-        } //End of if statement
-    } //End of Update
+        } 
+    } 
 
 
     //Start of Fixed Update
