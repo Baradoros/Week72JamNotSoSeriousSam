@@ -11,6 +11,12 @@ public class AutoScroller : MonoBehaviour {
     public float speed = 3;
 
     void FixedUpdate() {
+
         transform.position -= new Vector3(speed / 100, 0, 0);
+
+        if (transform.position.x < -1000) {
+            Destroy(gameObject);
+        }
     }
+
 }
