@@ -13,6 +13,7 @@ public class Test_Enemy_Miniguns : MonoBehaviour {
     #region This Object's Variables
     [Header("This Object's Variables")]
     public Rigidbody2D thisRigidbody2D; //To hold the Rigidbody2D of this object
+    public int health;
     #endregion
 
     #region Variables for movement
@@ -63,6 +64,10 @@ public class Test_Enemy_Miniguns : MonoBehaviour {
     void Update()
     {
 
+        // Check if HP <= 0 and kill this enemy if true
+        if (health <= 0) {
+            Die();
+        }
     }
 
     //Start of FixedUpdate
@@ -119,5 +124,15 @@ public class Test_Enemy_Miniguns : MonoBehaviour {
             time2Move = Random.Range(1.0f, 1.5f); //Setting a Random Range for time2move here
         } //End of if statement
     } //End of MoveToRandomPoint
+
+    // Method to deal damage to this enemy
+    public void TakeDamage(int damage) {
+        health -= damage;
+    }
+
+    // Method called when this enemy reaches 0HP
+    public void Die() {
+        Destroy(gameObject);
+    }
     #endregion
 }

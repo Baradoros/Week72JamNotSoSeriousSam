@@ -9,16 +9,21 @@ using UnityEngine;
 public class BackgroundScroller : MonoBehaviour {
 
     public GameObject background;
+    public GameObject streetLight;
+    public float streetLightSpawnDelay = 1;
 
     private List<GameObject> bgList = new List<GameObject>();
     private float distance;
     private bool spawn = false;
+    private float nextSpawn = 0;
 
     void Start() {
+
+        // Spawn Initial background on camera before scrolling begins
         distance = background.GetComponent<SpriteRenderer>().bounds.size.x * background.transform.localScale.x;
         GameObject bg = Instantiate(background, Vector3.zero, Quaternion.identity);
         bgList.Add(bg);
-        Spawn();
+        SpawnBackground();
     }
 
     void Update() {
@@ -44,11 +49,22 @@ public class BackgroundScroller : MonoBehaviour {
 
         // If new background needs to be spawned, spawn one
         if (spawn) {
-            Spawn();
+            SpawnBackground();
+        }
+
+
+        // Street Lights
+        if (Time.time > nextSpawn) {
+            SpawnStreetLight();
+            nextSpawn = Time.time + streetLightSpawnDelay;
         }
     }
 
-    private void Spawn() {
+    private void SpawnStreetLight() {
+        Instantiate(streetLight, new Vector3(10, -3.197597f, -2), Quaternion.identity);
+    }
+
+    private void SpawnBackground() {
 
         // Spawn a background and add it to the list
         GameObject bg = Instantiate(background, new Vector3(distance, 0, 0), Quaternion.identity);
