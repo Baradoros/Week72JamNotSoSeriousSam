@@ -1,23 +1,23 @@
 fileFormatVersion: 2
-guid: b5052d8c07d3aee4d933ad8423da1b07
+guid: 5d0ac0bc6500bee4b8869e51864c58ca
 TextureImporter:
   fileIDToRecycleName:
-    21300000: test_0
-    21300002: test_1
-    21300004: test_2
-    21300006: test_3
-    21300008: test_4
-    21300010: test_5
-    21300012: test_6
-    21300014: test_7
-    21300016: test_8
-    21300018: test_9
-    21300020: test_10
-    21300022: test_11
-    21300024: test_12
-    21300026: test_13
-    21300028: test_14
-    21300030: test_15
+    21300000: Bike_Assault_0
+    21300002: Bike_Assault_1
+    21300004: Bike_Assault_2
+    21300006: Bike_Assault_3
+    21300008: Bike_Assault_4
+    21300010: Bike_Assault_5
+    21300012: Bike_Assault_6
+    21300014: Bike_Assault_7
+    21300016: Bike_Assault_8
+    21300018: Bike_Assault_9
+    21300020: Bike_Assault_10
+    21300022: Bike_Assault_11
+    21300024: Bike_Assault_12
+    21300026: Bike_Assault_13
+    21300028: Bike_Assault_14
+    21300030: Bike_Assault_15
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -122,7 +122,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: test_0
+      name: Bike_Assault_0
       rect:
         serializedVersion: 2
         x: 0
@@ -136,13 +136,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0652bdf8394e5974293afa673a3ebeb7
+      spriteID: 79c1029efc9036b4a91602054554dfb0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: test_1
+      name: Bike_Assault_1
       rect:
         serializedVersion: 2
         x: 300
@@ -156,13 +156,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8e4b67ce79ef4ac459a3a89c2df7751b
+      spriteID: 3890348254aa4a3458f2359fde4c863b
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: test_2
+      name: Bike_Assault_2
       rect:
         serializedVersion: 2
         x: 600
@@ -176,13 +176,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c6fdd1f622dac0544b30888c9170b5ac
+      spriteID: f11221e633511bd4cb89670c769a9f52
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: test_3
+      name: Bike_Assault_3
       rect:
         serializedVersion: 2
         x: 900
@@ -196,13 +196,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: db999b7ade701294d878fde26e93892d
+      spriteID: f020802943ee2fd429a3b99ecf69f8ab
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: test_4
+      name: Bike_Assault_4
       rect:
         serializedVersion: 2
         x: 0
@@ -216,13 +216,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 13d286e39ab61af429a84947e1e304f1
+      spriteID: ab2e93a0b0b4bfd4cadfa547bd6ff6c2
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: test_5
+      name: Bike_Assault_5
       rect:
         serializedVersion: 2
         x: 300
@@ -236,13 +236,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d84a439010ace9b4b97a3df8a957d5bd
+      spriteID: 35bc2394a6031c640b823b9a2a3d90e4
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: test_6
+      name: Bike_Assault_6
       rect:
         serializedVersion: 2
         x: 600
@@ -256,13 +256,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f45a94ef55750874ea3f45bd5e7cbd6d
+      spriteID: 0d71d12cbba4617419e0de5e0a3e656c
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: test_7
+      name: Bike_Assault_7
       rect:
         serializedVersion: 2
         x: 900
@@ -276,13 +276,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dc91b6bdd9713444bbe3ff1ecfd99793
+      spriteID: c08c8b9cea5f04f4abc3f38495754296
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: test_8
+      name: Bike_Assault_8
       rect:
         serializedVersion: 2
         x: 0
@@ -296,13 +296,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6a106490bff348840b17ffb2deec4add
+      spriteID: beb4cd02a2bd57c47a86ccd2f98909cb
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: test_9
+      name: Bike_Assault_9
       rect:
         serializedVersion: 2
         x: 300
@@ -316,13 +316,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0d39d8becb0c5c94886c5c4ed962df76
+      spriteID: d9f6aa93af1da2747af6f70619a9a846
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: test_10
+      name: Bike_Assault_10
       rect:
         serializedVersion: 2
         x: 600
@@ -336,13 +336,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a30255902167bb743848dfb56ea663bb
+      spriteID: f4f298d42d20dc64289a7334c0af608e
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: test_11
+      name: Bike_Assault_11
       rect:
         serializedVersion: 2
         x: 900
@@ -356,13 +356,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 64f29d0db5685cd40ba334c07465dcfe
+      spriteID: 344e4f31852acd9418f2e7f402972fb2
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: test_12
+      name: Bike_Assault_12
       rect:
         serializedVersion: 2
         x: 0
@@ -376,13 +376,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1b4acf5701614c748a65a037cc7ab124
+      spriteID: 5fb3a68e1b17451408033222b6cc1aba
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: test_13
+      name: Bike_Assault_13
       rect:
         serializedVersion: 2
         x: 300
@@ -396,13 +396,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cb2030b2545bd374e8945fee43405f85
+      spriteID: f005329bce283d0439fd6be2c631375f
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: test_14
+      name: Bike_Assault_14
       rect:
         serializedVersion: 2
         x: 600
@@ -416,13 +416,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 35f873d252b91fa418724f6e3bc08649
+      spriteID: 3513db8c07cbb664f9cb6930807f87fe
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: test_15
+      name: Bike_Assault_15
       rect:
         serializedVersion: 2
         x: 900
@@ -436,7 +436,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 753c2c8304c3f4f4eaf3c0e049b1c659
+      spriteID: d0efce4dcc4018542a6104f16bcf8b51
       vertices: []
       indices: 
       edges: []
@@ -444,7 +444,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: db421851b7df7e3459d79dc88619d54b
+    spriteID: 574017199ad65724b96cad74e0f69e5b
     vertices: []
     indices: 
     edges: []

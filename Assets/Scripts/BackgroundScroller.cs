@@ -23,6 +23,7 @@ public class BackgroundScroller : MonoBehaviour {
 
     void Update() {
 
+        // Check if backgrounds have scrolled too far and should be deleted
         foreach(GameObject bg in bgList) {
             if (bg.transform.position.x < -distance * 1.5) {
                 bgList.Remove(bg);
@@ -31,6 +32,7 @@ public class BackgroundScroller : MonoBehaviour {
             }
         }
 
+        // Check if new background needs to be spawned
         foreach(GameObject bg in bgList) {
             if (bg.transform.position.x > 0) {
                 spawn = false;
@@ -40,12 +42,15 @@ public class BackgroundScroller : MonoBehaviour {
             }
         }
 
+        // If new background needs to be spawned, spawn one
         if (spawn) {
             Spawn();
         }
     }
 
     private void Spawn() {
+
+        // Spawn a background and add it to the list
         GameObject bg = Instantiate(background, new Vector3(distance, 0, 0), Quaternion.identity);
         bgList.Add(bg);
     }
