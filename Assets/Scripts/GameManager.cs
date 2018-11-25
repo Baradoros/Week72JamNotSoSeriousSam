@@ -10,6 +10,7 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class GameManager : MonoBehaviour {
 
+
     // Public referrence to this script so any GameObject can call these methods
     public static GameManager manager;
     public int score = 0;
@@ -27,6 +28,24 @@ public class GameManager : MonoBehaviour {
     }
 
     #region Utility Methods
+
+    public float LevelToDifficultyCurve(int level) {
+        // Difficulty curve y = 50log(2x)
+        // y = a * log(b (x - h)) + k
+        // x = (10 ^ ((y - k) / a)) / b + h
+
+
+        float verticalStretch = 50;
+        float horizontalStretch = 2;
+        float verticalShift = 0;
+        float horizontalShift = 0;
+
+        float difficulty = (Mathf.Pow(10, ((level - verticalShift) / verticalStretch)) / horizontalStretch) + horizontalShift;
+
+        return difficulty;
+
+    }
+
     private IEnumerator LoadSceneDelayed(float time) {
         yield return new WaitForSeconds(time);
         SceneManager.LoadScene(name, LoadSceneMode.Single);
