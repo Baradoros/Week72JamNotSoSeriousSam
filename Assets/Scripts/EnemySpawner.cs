@@ -7,7 +7,8 @@ public class EnemySpawner : MonoBehaviour {
     public int level;
 
     [Tooltip("Place enemy prefabs to spawn here")]
-    public GameObject[] enemies;
+    public GameObject[] enemies;            // Store enemy prefabs to spawn here and pick one from the array in SpawnWave()
+                                            // Later we'll add functionality to sort by difficulty and such
 
     private float difficulty;                                           // The total ammount of enemies allowed on screen at once
     private List<GameObject> enemyList = new List<GameObject>();
