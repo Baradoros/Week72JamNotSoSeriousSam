@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - Starting_Points
   - Random_Points
+  - PlayerBullet
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - Enemy
   - PlayerBlocking
   - PlayerProjectile
-  - 
+  - LevelBounds
   - 
   - 
   - 

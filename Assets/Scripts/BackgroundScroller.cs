@@ -10,6 +10,8 @@ public class BackgroundScroller : MonoBehaviour {
 
     public GameObject background;
     public GameObject streetLight;
+    public GameObject parallaxBuildings1;
+    public GameObject parallaxBuildings2;
     public float streetLightSpawnDelay = 1;
 
     private List<GameObject> bgList = new List<GameObject>();
@@ -69,5 +71,9 @@ public class BackgroundScroller : MonoBehaviour {
         // Spawn a background and add it to the list
         GameObject bg = Instantiate(background, new Vector3(distance, 0, 0), Quaternion.identity);
         bgList.Add(bg);
+
+        // Spawn Parallax
+        Instantiate(parallaxBuildings1, new Vector3(distance, 2.893f, 5), Quaternion.identity);
+        Instantiate(parallaxBuildings2, new Vector3(distance, 3.04f, 10), Quaternion.identity);
     }
 }

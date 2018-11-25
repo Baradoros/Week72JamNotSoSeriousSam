@@ -13,7 +13,8 @@ public class Test_Enemy_Miniguns : MonoBehaviour {
     #region This Object's Variables
     [Header("This Object's Variables")]
     public Rigidbody2D thisRigidbody2D; //To hold the Rigidbody2D of this object
-    public int health;
+    public int health = 5;
+    private int enemyScore = 50; // The ammount of score this enemy adds when it dies
     #endregion
 
     #region Variables for movement
@@ -66,6 +67,7 @@ public class Test_Enemy_Miniguns : MonoBehaviour {
 
         // Check if HP <= 0 and kill this enemy if true
         if (health <= 0) {
+            Debug.Log("Health <= 0");
             Die();
         }
     }
@@ -82,6 +84,12 @@ public class Test_Enemy_Miniguns : MonoBehaviour {
             MoveToRandomPoint(); //Calling MoveToRandomPoint here
         } //End of else statement
     } //End of FixedUpdate
+
+    private void OnCollisionEnter2D(Collision2D collision) {
+        if (collision.gameObject.layer == 11) { // Player layers start at 8, 11 is PlayerProjectile
+            TakeDamage(1);
+        }
+    }
     #endregion
 
     #region Custom Functions
@@ -125,13 +133,16 @@ public class Test_Enemy_Miniguns : MonoBehaviour {
         } //End of if statement
     } //End of MoveToRandomPoint
 
+
     // Method to deal damage to this enemy
     public void TakeDamage(int damage) {
         health -= damage;
     }
 
+
     // Method called when this enemy reaches 0HP
     public void Die() {
+        GameManager.manager.score += enemyScore;
         Destroy(gameObject);
     }
     #endregion
