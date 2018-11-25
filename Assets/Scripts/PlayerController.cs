@@ -72,16 +72,16 @@ public class PlayerController : MonoBehaviour {
         }
 
         // If fire clicked and firerate time has passed, fire
-        if (Input.GetButton("Fire1") && Time.time > nextFire) 
+        if (Input.GetButton("Fire1") && Time.time > nextFire)
         {
             Vector3 mouseClickPositon = GetMousePosition(); //Getting firing direction here
 
             nextFire = Time.time + fireDelay; //Adding firing delay
             Instantiate(bullet, bulletSpawn.position, GetAngleToMouse(bulletSpawn.position, GetMousePosition())); //Firing bullet here
             audio.Play();
-            
-        } 
-    } 
+
+        }
+    }
 
 
     //Start of Fixed Update
@@ -102,6 +102,19 @@ public class PlayerController : MonoBehaviour {
             StartCoroutine(FlickerPlayer()); //Starting FlickerPlayer routine to start flickering player here
         } //End of if statement
     } //End of OnCollisionEnter
+
+    /// <summary>
+    /// Start of OnTriggerEnter2D. To be used for various effects, including flicker effect
+    /// and handling of player damage
+    /// </summary>
+    /// <param name="collision"></param>
+    private void OnTriggerEnter2D(Collider2D collision) {
+        if (collision.gameObject.CompareTag("Explosion") && !isFlickering) //Handling collisions with EnemyBullet tagged objects here. Use this to control player damage and effects on player
+        {
+            StartCoroutine(FlickerPlayer()); //Starting FlickerPlayer routine to start flickering player here
+        }
+    }
+
     #endregion
 
     #region Custom Functions
@@ -112,7 +125,7 @@ public class PlayerController : MonoBehaviour {
             rb2d.velocity = new Vector2(Input.GetAxis("Horizontal") * speed, Input.GetAxis("Vertical") * verticalSpeedModifier);
         }
 
-    } 
+    }
 
     /// <summary>
     /// A function that takes the MousePosition in world space and returns it.
@@ -124,7 +137,7 @@ public class PlayerController : MonoBehaviour {
         mousePosition = Camera.main.ScreenToWorldPoint(mousePosition); //Converting the click to world space co-ordinates here
 
         return mousePosition;
-    } 
+    }
 
     public Quaternion GetAngleToMouse(Vector3 obj, Vector3 mouse) {
 
