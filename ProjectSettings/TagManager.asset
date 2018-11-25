@@ -8,6 +8,7 @@ TagManager:
   - Starting_Points
   - Random_Points
   - PlayerBullet
+  - EnemyBullet
   layers:
   - Default
   - TransparentFX
