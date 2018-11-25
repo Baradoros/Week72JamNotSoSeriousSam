@@ -42,6 +42,10 @@ public class PlayerController : MonoBehaviour {
     //Start of Update
     private void Update()
     {
+        // Set animation trigger for wheelie
+        anim.SetFloat("Speed", Input.GetAxis("Horizontal"));
+        Debug.Log(Input.GetAxis("Horizontal"));
+
         // If fire clicked and firerate time has passed, fire
         if (Input.GetButton("Fire1") && Time.time > nextFire) 
         {
@@ -70,11 +74,6 @@ public class PlayerController : MonoBehaviour {
             rb2d.velocity = new Vector2(Input.GetAxis("Horizontal") * speed, Input.GetAxis("Vertical") * verticalSpeedModifier);
         }
 
-        // Change animation
-        if (rb2d.velocity != Vector2.zero)
-            anim.SetBool("Moving", true);
-        else
-            anim.SetBool("Moving", false);
     } 
 
     /// <summary>
