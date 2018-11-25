@@ -32,10 +32,10 @@ public class GameManager : MonoBehaviour {
 
     // Accepts what level we're on and returns how many enemies we should have
     public float LevelToDifficultyCurve(int level) {
-        // Difficulty curve y = 50log(2x)
+        // Difficulty curve y = 10log(1.5x)
 
-        float verticalStretch = 50;             // Raises the difficulty cap
-        float horizontalStretch = 2;            // Smooths and elongates the difficulty curve
+        float verticalStretch = 10;             // Raises the difficulty cap
+        float horizontalStretch = 1.5f;            // Smooths and elongates the difficulty curve
         float verticalShift = 0;                // Increases starting difficulty
         float horizontalShift = 0;              // Increases level number that curve starts at (keep at 0)
 
