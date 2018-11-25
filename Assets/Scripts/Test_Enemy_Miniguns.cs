@@ -67,7 +67,6 @@ public class Test_Enemy_Miniguns : MonoBehaviour {
 
         // Check if HP <= 0 and kill this enemy if true
         if (health <= 0) {
-            Debug.Log("Health <= 0");
             Die();
         }
     }
