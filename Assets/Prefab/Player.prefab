@@ -156,7 +156,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 13349ee8a56a93e429713507e4c44895, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -274,6 +274,9 @@ MonoBehaviour:
   fireDelay: 0.1
   bullet: {fileID: 1483867198666466, guid: 72fccc430f68fcd458f12fe32e21519a, type: 2}
   bulletSpawn: {fileID: 4603320517079942}
+  spriteRenderer: {fileID: 0}
+  spriteColor: {r: 0, g: 0, b: 0, a: 0}
+  isFlickering: 0
   rev: {fileID: 8300000, guid: 7f9590bb3739f8c48b309db90b136be4, type: 3}
   canMove: 1
   mousePosition: {x: 0, y: 0, z: 0}
