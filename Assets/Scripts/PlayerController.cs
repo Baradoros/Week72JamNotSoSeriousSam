@@ -18,6 +18,9 @@ public class PlayerController : MonoBehaviour {
     public GameObject bullet;
     public Transform bulletSpawn;
 
+    [Space]
+    public AudioClip rev;
+
     [HideInInspector]
     public bool canMove = true;
     [HideInInspector]
@@ -27,7 +30,8 @@ public class PlayerController : MonoBehaviour {
     private Animator anim;
     private Rigidbody2D rb2d;
     private AudioSource audio;
-    private float nextFire = 0; 
+    private float nextFire = 0;
+    private bool playRev = true;
     #endregion
 
     #region Built-in Functions
@@ -44,7 +48,15 @@ public class PlayerController : MonoBehaviour {
     {
         // Set animation trigger for wheelie
         anim.SetFloat("Speed", Input.GetAxis("Horizontal"));
-        Debug.Log(Input.GetAxis("Horizontal"));
+
+        // Play engine rev one time when going left
+        if (Input.GetAxis("Horizontal") > 0 && playRev) {
+            audio.PlayOneShot(rev);
+            playRev = false;
+        }
+        if (Input.GetAxis("Horizontal") <= 0) {
+            playRev = true;
+        }
 
         // If fire clicked and firerate time has passed, fire
         if (Input.GetButton("Fire1") && Time.time > nextFire) 
