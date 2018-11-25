@@ -38,3 +38,8 @@ sysinfo.txt
 
 # Crashlytics generated file
 Assets/StreamingAssets/crashlytics-build.properties
+Assets/Plugins/Editor/JetBrains/
+
+Assets/Plugins/Editor/JetBrains\.meta
+
+\.idea/
