@@ -210,20 +210,11 @@ Prefab:
       propertyPath: m_Name
       value: Test_Enemy_MiniGuns (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 4881962275253688, guid: 7039fd66e8550ee43bedb142ab859c3c, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4881962275253688, guid: 7039fd66e8550ee43bedb142ab859c3c, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 212999879492544674, guid: 7039fd66e8550ee43bedb142ab859c3c,
+    - target: {fileID: 95642018588429788, guid: 7039fd66e8550ee43bedb142ab859c3c,
         type: 2}
-      propertyPath: m_Sprite
+      propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 21300000, guid: fad2429caba965340b0ff2379cb1419a,
-        type: 3}
+      objectReference: {fileID: 9100000, guid: 134ca949c7d9aa149bf3257b8d29e114, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7039fd66e8550ee43bedb142ab859c3c, type: 2}
   m_IsPrefabAsset: 0
@@ -588,29 +579,6 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7039fd66e8550ee43bedb142ab859c3c, type: 2}
   m_IsPrefabAsset: 0
---- !u!1 &699157087 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1450269416753834, guid: 7039fd66e8550ee43bedb142ab859c3c,
-    type: 2}
-  m_PrefabInternal: {fileID: 88686355}
---- !u!95 &699157092
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 699157087}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 134ca949c7d9aa149bf3257b8d29e114, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &738429670
 Prefab:
   m_ObjectHideFlags: 0
@@ -1068,11 +1036,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 114468235458027546, guid: 501e1df226e21694f9edf651d186ff88,
-        type: 2}
-      propertyPath: rev
-      value: 
-      objectReference: {fileID: 8300000, guid: 7f9590bb3739f8c48b309db90b136be4, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 501e1df226e21694f9edf651d186ff88, type: 2}
   m_IsPrefabAsset: 0

@@ -274,6 +274,7 @@ MonoBehaviour:
   fireDelay: 0.1
   bullet: {fileID: 1483867198666466, guid: 72fccc430f68fcd458f12fe32e21519a, type: 2}
   bulletSpawn: {fileID: 4603320517079942}
+  rev: {fileID: 8300000, guid: 7f9590bb3739f8c48b309db90b136be4, type: 3}
   canMove: 1
   mousePosition: {x: 0, y: 0, z: 0}
 --- !u!212 &212931150572841320

@@ -10,11 +10,21 @@ using UnityEngine;
 
 public class Test_Enemy_Miniguns : MonoBehaviour {
 
-    #region This Object's Variables
-    [Header("This Object's Variables")]
+    #region This Object's Variables and Player Variables
+    [Header("This Object's and Player Variables")]
     public Rigidbody2D thisRigidbody2D; //To hold the Rigidbody2D of this object
+    public GameObject playerObject; //To hold the Player
+
+    //Health and scoring
     public int health = 5;
     private int enemyScore = 50; // The ammount of score this enemy adds when it dies
+    #endregion
+
+    #region Variables for shooting
+    [Header("Variables for shooting")]
+    public float nextFire; //When this variable turns zero, it will trigger a bullet fire
+    public GameObject enemyBullet; //To hold the enemyBullet
+    public Transform bulletSpawner; //To hold bulletSpawner
     #endregion
 
     #region Variables for movement
@@ -45,6 +55,7 @@ public class Test_Enemy_Miniguns : MonoBehaviour {
     {
         //This Object references
         thisRigidbody2D = this.GetComponent<Rigidbody2D>(); //Setting thisRigidbody2D values here
+        playerObject = GameObject.FindGameObjectWithTag("Player"); //Find Player by tag and passing it here. To be used to locate player for shooting
 
         //Getting the number of the starting point here and passing value of starting_Points
         starting_Point = Random.Range(0, 4); //Setting a random value here
@@ -59,6 +70,7 @@ public class Test_Enemy_Miniguns : MonoBehaviour {
     void Start()
     {
         time2Move = Random.Range(1.0f, 2.0f); //Giving a random value to time2Move
+        nextFire = Random.Range(1.5f, 2.0f); //Giving a random firing rate here
     } //End of Start
 
     // Update is called once per frame
@@ -74,6 +86,15 @@ public class Test_Enemy_Miniguns : MonoBehaviour {
     //Start of FixedUpdate
     private void FixedUpdate()
     {
+        nextFire -= Time.deltaTime; //Substracting Time.deltaTime to move Next Fire towards zero.
+
+        //Running this only when nextFire is less than zero and enemy has teached starting point
+        if(nextFire < 0 && reachedStart)
+        {
+            Debug.Log("Bullet was fired");
+            ShootBullet(); //Calling ShootBullet here
+        } //End of if statement
+
         if (!reachedStart) //Runs only if reachedStart is false
         {
             MoveToStartingPoint(); //Calling MoveTOStartingPoint here 
@@ -132,12 +153,29 @@ public class Test_Enemy_Miniguns : MonoBehaviour {
         } //End of if statement
     } //End of MoveToRandomPoint
 
+    /// <summary>
+    /// A function that will be called everytime nextFire will turn zero.
+    /// This will fire a bullet
+    /// </summary>
+    public void ShootBullet()
+    {
+        Vector3 dir = playerObject.transform.position - bulletSpawner.position;
+        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        bulletSpawner.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+
+        Instantiate(enemyBullet, bulletSpawner.position, bulletSpawner.rotation); //Instantiating the bullet here
+
+        //Using this if statement to set a new value for NextFire
+        if(nextFire <= 0)
+        {
+            nextFire = Random.Range(1.5f, 2.0f);
+        } //End of if statement
+    } //End of ShootBullet
 
     // Method to deal damage to this enemy
     public void TakeDamage(int damage) {
         health -= damage;
     }
-
 
     // Method called when this enemy reaches 0HP
     public void Die() {
