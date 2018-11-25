@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour {
         // Difficulty curve y = 10log(1.5x)
 
         float verticalStretch = 10;             // Raises the difficulty cap
-        float horizontalStretch = 1.5f;            // Smooths and elongates the difficulty curve
+        float horizontalStretch = 1.5f;         // Smooths and elongates the difficulty curve
         float verticalShift = 0;                // Increases starting difficulty
         float horizontalShift = 0;              // Increases level number that curve starts at (keep at 0)
 
