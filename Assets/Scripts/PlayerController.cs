@@ -12,11 +12,21 @@ public class PlayerController : MonoBehaviour {
     [Header("Movement Variables")]
     public float health = 5;
     public float speed = 2;
-    public float fireDelay = 0.5f;
+    public float carbineFireDelay = 0.3f;
+    public float shotgunFireDelay = 0.25f;
+    public float minigunFireDelay = 0.10f;
+
+    public enum WeaponSelected
+    {
+        SemiAutoCarbine,
+        Shotgun,
+        MiniGun
+    }
 
     [Header("Weapon Variables")]
     public GameObject bullet;
     public Transform bulletSpawn;
+    public WeaponSelected weaponSelected = WeaponSelected.SemiAutoCarbine;
 
     [Header("Flicker Player variables")]
     public SpriteRenderer spriteRenderer; //To be used for the flicker effect
@@ -36,7 +46,7 @@ public class PlayerController : MonoBehaviour {
     private Animator anim;
     private Rigidbody2D rb2d;
     private AudioSource audio;
-    private float nextFire = 0;
+    private float NextFire = 0;
     private bool playRev = true;
     #endregion
 
@@ -72,14 +82,30 @@ public class PlayerController : MonoBehaviour {
         }
 
         // If fire clicked and firerate time has passed, fire
-        if (Input.GetButton("Fire1") && Time.time > nextFire)
+        if (Input.GetButton("Fire1") && Time.time > NextFire)
         {
             Vector3 mouseClickPositon = GetMousePosition(); //Getting firing direction here
-
-            nextFire = Time.time + fireDelay; //Adding firing delay
-            Instantiate(bullet, bulletSpawn.position, GetAngleToMouse(bulletSpawn.position, GetMousePosition())); //Firing bullet here
+            switch (weaponSelected)
+            {
+                case WeaponSelected.SemiAutoCarbine:
+                    NextFire = Time.time + carbineFireDelay; //Adding firing delay
+                    Instantiate(bullet, bulletSpawn.position, GetAngleToMouse(bulletSpawn.position, GetMousePosition())); //Firing bullet here
+                    break;
+                case WeaponSelected.Shotgun:
+                    NextFire = Time.time + shotgunFireDelay; //Adding firing delay
+                    Quaternion bullet1FireAngle = GetAngleToMouse(bulletSpawn.position, GetMousePosition(), 15);
+                    Quaternion bullet2FireAngle = bullet1FireAngle * Quaternion.Euler(0, 0, 45);
+                    Quaternion bullet3FireAngle = bullet1FireAngle * Quaternion.Euler(0, 0, -45);
+                    Instantiate(bullet, bulletSpawn.position, bullet1FireAngle); //Firing bullet1 here
+                    Instantiate(bullet, bulletSpawn.position, bullet2FireAngle); //Firing bullet2 here
+                    Instantiate(bullet, bulletSpawn.position, bullet3FireAngle); //Firing bullet3 here
+                    break;
+                case WeaponSelected.MiniGun:
+                    NextFire = Time.time + minigunFireDelay; //Adding firing delay
+                    Instantiate(bullet, bulletSpawn.position, GetAngleToMouse(bulletSpawn.position, GetMousePosition())); //Firing bullet here
+                    break;
+            }
             audio.Play();
-
         }
     }
 
@@ -139,13 +165,22 @@ public class PlayerController : MonoBehaviour {
         return mousePosition;
     }
 
-    public Quaternion GetAngleToMouse(Vector3 obj, Vector3 mouse) {
+    public Quaternion GetAngleToMouse(Vector3 obj, Vector3 mouse, float clampAngle = 30) {
 
         // Find angle in radians between obj and mouse
         // convert radians to degrees
-        // clamp rotation values between -30 and 30 degrees to prevent being able to shoot at odd angles
+        // clamp rotation values between -'clampAngle' and 'clampAngle' degrees to prevent being able to shoot at odd angles
         // convert degrees to quaternion
-        return Quaternion.Euler(0, 0, Mathf.Clamp(Mathf.Atan2(obj.y - mouse.y, obj.x - mouse.x) * Mathf.Rad2Deg, -30, 30));
+        return Quaternion.Euler(0, 0, Mathf.Clamp(Mathf.Atan2(obj.y - mouse.y, obj.x - mouse.x) * Mathf.Rad2Deg, -clampAngle, clampAngle));
+    }
+
+    /// <summary>
+    /// Sets the Weapon Selected. This can be changed from a powerup / key bindings.
+    /// </summary>
+    /// <param name="newWeaponSelected"> the new weapon that needs to be selected.</param>
+    public void SetSelectedWeapon(WeaponSelected newWeaponSelected)
+    {
+        weaponSelected = newWeaponSelected;
     }
 
     /// <summary>
