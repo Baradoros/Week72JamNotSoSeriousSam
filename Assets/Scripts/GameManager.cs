@@ -16,6 +16,10 @@ public class GameManager : MonoBehaviour {
     public int score = 0;
     public int level;
 
+    [Header("Cursor Variables")]
+    public Texture2D cursorTexture = null;
+    private Vector2 cursorOffset = Vector2.zero;
+
     void Start() {
 
         // Ensure there can only be one GameManager in a scene
@@ -25,6 +29,16 @@ public class GameManager : MonoBehaviour {
         }
         else if (manager != this) {
             Destroy(gameObject);
+        }
+
+        //Check if the CursorTexture is set. If default window cursor is required, do not set the cursor Texture.
+        if(cursorTexture != null)
+        {
+            cursorOffset = new Vector2(cursorTexture.width / 2, cursorTexture.height / 2); //The offset should be half the size of the cusor image.
+            Cursor.SetCursor(cursorTexture, cursorOffset, CursorMode.ForceSoftware);
+        } else
+        {
+            Cursor.SetCursor(cursorTexture, cursorOffset, CursorMode.Auto);
         }
     }
 
