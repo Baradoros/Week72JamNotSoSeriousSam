@@ -54,19 +54,24 @@ public class GameManager : MonoBehaviour {
     }
 
     // [!] Anything that needs to happen when the game moves to the scorescreen happens here [!]
+    // Called by the timer when time is up
     public void GoToScoreScreen() {
 
         // Move camera to scores screen position
         mainCamera.transform.DOMove(scoreAreaLocation, lerpSpeed, false);
 
         // Move player into position
-        player.GetComponent<PlayerController>().canShoot = false;
-        player.GetComponent<PlayerController>().canMove = false;
-        player.transform.DOMove(new Vector3(8, -2, player.transform.position.z), lerpSpeed, false);
+        player.GetComponent<PlayerController>().canShoot = false;                                   // Disable shooting
+        player.GetComponent<PlayerController>().canMove = false;                                    // Disable movement
+        player.transform.DOMove(new Vector3(4, -3, player.transform.position.z), lerpSpeed, false); // Move player to predetermined point for score screen
+        player.GetComponent<Rigidbody2D>().velocity = Vector3.zero;                                 // Zero out velocity
 
         // Clear all enemies and disable enemyspawner
         enemySpawner.GetComponent<EnemySpawner>().ClearEnemies();
         enemySpawner.SetActive(false);
+
+        // Set cursor texture back to default
+        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
     }
 
 
