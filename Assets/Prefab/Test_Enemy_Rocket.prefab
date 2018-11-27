@@ -68,8 +68,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1975053920294004}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.05, y: -0.64, z: -1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -10.30981, y: -2.658297, z: -1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children:
   - {fileID: 4051591723843804}
   m_Father: {fileID: 0}
@@ -271,7 +271,6 @@ MonoBehaviour:
   thisRigidbody2D: {fileID: 0}
   playerObject: {fileID: 0}
   health: 5
-  bulletSpread: 20
   nextFire: 0
   enemyBullet: {fileID: 1230113872596868, guid: d6934148dee669a4fb11165ab73b39d3,
     type: 2}
