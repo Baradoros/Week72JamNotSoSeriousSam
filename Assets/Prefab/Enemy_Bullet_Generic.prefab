@@ -100,6 +100,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  bulletHitPrefab: {fileID: 1734811610571526, guid: d7a20ad2cd1b79f46924e702459ffe32,
+    type: 2}
 --- !u!212 &212688171318345580
 SpriteRenderer:
   m_ObjectHideFlags: 1

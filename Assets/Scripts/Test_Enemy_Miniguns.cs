@@ -64,7 +64,6 @@ public class Test_Enemy_Miniguns : MonoBehaviour {
         thisRigidbody2D = this.GetComponent<Rigidbody2D>(); //Setting thisRigidbody2D values here
         playerObject = GameObject.FindGameObjectWithTag("Player"); //Find Player by tag and passing it here. To be used to locate player for shooting
         audioSource = this.gameObject.GetComponent<AudioSource>(); //Setting value of the audioSource variable
-        gameObject.tag = "Enemy";
 
         //Getting the number of the starting point here and passing value of starting_Points
         starting_Point = Random.Range(0, 4); //Setting a random value here
@@ -171,8 +170,7 @@ public class Test_Enemy_Miniguns : MonoBehaviour {
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         bulletSpawner.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
-        GameObject bullet = Instantiate(enemyBullet, bulletSpawner.position, bulletSpawner.rotation); //Instantiating the bullet here
-        bullet.gameObject.tag = "Enemy bullet";
+        Instantiate(enemyBullet, bulletSpawner.position, bulletSpawner.rotation); //Instantiating the bullet here
 
         //Handling sound here
         audioSource.Stop();

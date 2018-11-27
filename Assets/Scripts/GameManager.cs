@@ -100,6 +100,8 @@ public class GameManager : MonoBehaviour {
         GameManager.manager.player = player;
         GameManager.manager.enemySpawner = enemySpawner;
         GameManager.manager.timeLimit = timeLimit;
+        GameManager.manager.UI = UI;
+        GameManager.manager.scoreScreenUI = scoreScreenUI;
 
         //Cursor variables
         GameManager.manager.cursorTexture = cursorTexture;

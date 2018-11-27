@@ -7,6 +7,9 @@ public class Enemy_Bullet_Generic : MonoBehaviour {
 
     private Rigidbody2D rb2d;
 
+    [SerializeField]
+    private GameObject bulletHitPrefab;
+
     bool hasSpawned = false;
 
     void Start()
@@ -27,6 +30,11 @@ public class Enemy_Bullet_Generic : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-       Destroy(gameObject);
+        if (bulletHitPrefab && (collision.gameObject.layer == 8))
+        {
+            GameObject bulletHit = Instantiate(bulletHitPrefab, transform.position, Quaternion.identity);
+            Destroy(bulletHit, 0.583f);
+        }
+        Destroy(gameObject);
     }
 }
