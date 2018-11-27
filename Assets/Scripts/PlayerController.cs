@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour {
     public AudioClip rev;
 
     [HideInInspector]
-    public bool canMove = true;
+    public bool canMove = true, canShoot = true;
     [HideInInspector]
     public Vector3 mousePosition;
 
@@ -83,7 +83,7 @@ public class PlayerController : MonoBehaviour {
         }
 
         // If fire clicked and firerate time has passed, fire
-        if (Input.GetButton("Fire1") && Time.time > NextFire)
+        if (Input.GetButton("Fire1") && Time.time > NextFire && canShoot)
         {
             Vector3 mouseClickPositon = GetMousePosition(); //Getting firing direction here
             switch (weaponSelected)

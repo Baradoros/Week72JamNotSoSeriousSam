@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
 
 /// <summary>
 /// This script is meant to hold any methods that are core to the functioning of the game that may need to be called from anywhere.
@@ -14,6 +15,8 @@ public class GameManager : MonoBehaviour {
 
     // Public referrence to this script so any GameObject can call these methods
     public static GameManager manager;
+    public GameObject player;
+    public GameObject enemySpawner;
     public int score = 0;
     public int level = 1;
     public float timeLimit = 60;
@@ -25,7 +28,6 @@ public class GameManager : MonoBehaviour {
 
     [Header("Camera Variables")]
     public Camera mainCamera;
-    public Vector3 playAreaLocation = new Vector3();
     public Vector3 scoreAreaLocation = new Vector3();
     public float lerpSpeed;
 
@@ -51,13 +53,22 @@ public class GameManager : MonoBehaviour {
         }
     }
 
+    // [!] Anything that needs to happen when the game moves to the scorescreen happens here [!]
     public void GoToScoreScreen() {
-        mainCamera.transform.position = Vector3.Lerp(mainCamera.transform.position, scoreAreaLocation, Time.deltaTime * lerpSpeed);
+
+        // Move camera to scores screen position
+        mainCamera.transform.DOMove(scoreAreaLocation, lerpSpeed, false);
+
+        // Move player into position
+        player.GetComponent<PlayerController>().canShoot = false;
+        player.GetComponent<PlayerController>().canMove = false;
+        player.transform.DOMove(new Vector3(8, -2, player.transform.position.z), lerpSpeed, false);
+
+        // Clear all enemies and disable enemyspawner
+        enemySpawner.GetComponent<EnemySpawner>().ClearEnemies();
+        enemySpawner.SetActive(false);
     }
 
-    public void GoToPlayScreen() {
-        mainCamera.transform.position = Vector3.Lerp(mainCamera.transform.position, playAreaLocation, Time.deltaTime * lerpSpeed);
-    }
 
 
     #region Utility Methods

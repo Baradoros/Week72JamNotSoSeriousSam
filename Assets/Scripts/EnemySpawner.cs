@@ -67,4 +67,11 @@ public class EnemySpawner : MonoBehaviour {
             enemyList.Add(enemy);
         }
     }
+
+    public void ClearEnemies() {
+        foreach (GameObject enemy in enemyList) {
+            Destroy(enemy.gameObject);
+        }
+        enemyList.Clear();
+    }
 }
