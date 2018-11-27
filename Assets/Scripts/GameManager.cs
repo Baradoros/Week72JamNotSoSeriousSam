@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour {
     public static GameManager manager;
     public GameObject player;
     public GameObject enemySpawner;
+    public GameObject UI;
+    public GameObject scoreScreenUI;
     public int score = 0;
     public int level = 1;
     public float timeLimit = 60;
@@ -51,16 +53,25 @@ public class GameManager : MonoBehaviour {
         {
             Cursor.SetCursor(cursorTexture, cursorOffset, CursorMode.Auto);
         }
+
+        // Ensure Main UI is active and Scorescreen UI is inactive
+        UI.SetActive(true);
+        scoreScreenUI.SetActive(false);
     }
 
     // [!] Anything that needs to happen when the game moves to the scorescreen happens here [!]
     // Called by the timer when time is up
     public void GoToScoreScreen() {
 
+        // Disable Main UI and enable Score Screen UI
+        UI.SetActive(false);
+        scoreScreenUI.SetActive(true);
+
         // Move camera to scores screen position
         mainCamera.transform.DOMove(scoreAreaLocation, lerpSpeed, false);
 
-        // Move player into position
+        // Move player into position and set invulnerable
+        player.GetComponent<PlayerController>().damagable = false;                                  // Set player invulnerable
         player.GetComponent<PlayerController>().canShoot = false;                                   // Disable shooting
         player.GetComponent<PlayerController>().canMove = false;                                    // Disable movement
         player.transform.DOMove(new Vector3(4, -3, player.transform.position.z), lerpSpeed, false); // Move player to predetermined point for score screen

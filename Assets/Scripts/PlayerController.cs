@@ -43,7 +43,7 @@ public class PlayerController : MonoBehaviour {
     public AudioClip rev;
 
     [HideInInspector]
-    public bool canMove = true, canShoot = true;
+    public bool canMove = true, canShoot = true, damagable = true;
     [HideInInspector]
     public Vector3 mousePosition;
 
@@ -132,6 +132,11 @@ public class PlayerController : MonoBehaviour {
         if (isFlickering) {
             return;
         }
+
+        // I know this is kindof redundant but we're pressed for time
+        if (!damagable)
+            return;
+
         if (collision.gameObject.CompareTag("EnemyBullet")) //Handling collisions with EnemyBullet tagged objects here. Use this to control player damage and effects on player
         {
             TakeDamage();
@@ -156,6 +161,11 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void TakeDamage() {
+
+        // Don't take damage if player is invulnerable
+        if (!damagable)
+            return;
+
         health = Math.Max(0, health - 1);
         isFlickering = true;
 
