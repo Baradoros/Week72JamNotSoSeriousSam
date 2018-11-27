@@ -1,0 +1,771 @@
+fileFormatVersion: 2
+guid: 3551e9f271e723a49a42a32817ae8d01
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Boss_Cannon_0
+    21300002: Boss_Cannon_1
+    21300004: Boss_Cannon_2
+    21300006: Boss_Cannon_3
+    21300008: Boss_Cannon_4
+    21300010: Boss_Cannon_5
+    21300012: Boss_Cannon_6
+    21300014: Boss_Cannon_7
+    21300016: Boss_Cannon_8
+    21300018: Boss_Cannon_9
+    21300020: Boss_Cannon_10
+    21300022: Boss_Cannon_11
+    21300024: Boss_Cannon_12
+    21300026: Boss_Cannon_13
+    21300028: Boss_Cannon_14
+    21300030: Boss_Cannon_15
+    21300032: Boss_Cannon_16
+    21300034: Boss_Cannon_17
+    21300036: Boss_Cannon_18
+    21300038: Boss_Cannon_19
+    21300040: Boss_Cannon_20
+    21300042: Boss_Cannon_21
+    21300044: Boss_Cannon_22
+    21300046: Boss_Cannon_23
+    21300048: Boss_Cannon_24
+    21300050: Boss_Cannon_25
+    21300052: Boss_Cannon_26
+    21300054: Boss_Cannon_27
+    21300056: Boss_Cannon_28
+    21300058: Boss_Cannon_29
+    21300060: Boss_Cannon_30
+    21300062: Boss_Cannon_31
+  externalObjects: {}
+  serializedVersion: 7
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Boss_Cannon_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3920
+        width: 770
+        height: 560
+      alignment: 9
+      pivot: {x: 0.55, y: 0.34}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9aa24f9a3478c3242b05ca9611f3cb9e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Cannon_1
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 3920
+        width: 770
+        height: 560
+      alignment: 9
+      pivot: {x: 0.55, y: 0.34}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ffdbc1e9affaa645a25707b2a4ec452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Cannon_2
+      rect:
+        serializedVersion: 2
+        x: 1540
+        y: 3920
+        width: 770
+        height: 560
+      alignment: 9
+      pivot: {x: 0.55, y: 0.34}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f005d7d01553294e8e76734e922b12d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Cannon_3
+      rect:
+        serializedVersion: 2
+        x: 2310
+        y: 3920
+        width: 770
+        height: 560
+      alignment: 9
+      pivot: {x: 0.55, y: 0.34}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 384559b4389590543be5694bc2da7b6f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Cannon_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3360
+        width: 770
+        height: 560
+      alignment: 9
+      pivot: {x: 0.55, y: 0.34}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c05fa1c73de8e444aa4fc83ede94512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Cannon_5
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 3360
+        width: 770
+        height: 560
+      alignment: 9
+      pivot: {x: 0.55, y: 0.34}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4519182a7d4ac6d4ba92a5202e6a5b5b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Cannon_6
+      rect:
+        serializedVersion: 2
+        x: 1540
+        y: 3360
+        width: 770
+        height: 560
+      alignment: 9
+      pivot: {x: 0.55, y: 0.34}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f55eacb85ed0dc46895238e9cc94990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Cannon_7
+      rect:
+        serializedVersion: 2
+        x: 2310
+        y: 3360
+        width: 770
+        height: 560
+      alignment: 9
+      pivot: {x: 0.55, y: 0.34}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abf835ba3fa2aa34184f39ec6504dbc3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Cannon_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2800
+        width: 770
+        height: 560
+      alignment: 9
+      pivot: {x: 0.55, y: 0.34}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd2e8494adc716d4e84c08c4ebafe3d6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Cannon_9
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 2800
+        width: 770
+        height: 560
+      alignment: 9
+      pivot: {x: 0.55, y: 0.34}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2eeffe64e350774d8b48de3715a2c0a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Cannon_10
+      rect:
+        serializedVersion: 2
+        x: 1540
+        y: 2800
+        width: 770
+        height: 560
+      alignment: 9
+      pivot: {x: 0.55, y: 0.34}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a573c13070f17174bab0b8c05fb30b49
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Cannon_11
+      rect:
+        serializedVersion: 2
+        x: 2310
+        y: 2800
+        width: 770
+        height: 560
+      alignment: 9
+      pivot: {x: 0.55, y: 0.34}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c3b5a90384ed254dac97d50bc52e85a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Cannon_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2240
+        width: 770
+        height: 560
+      alignment: 9
+      pivot: {x: 0.55, y: 0.34}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e05e0307a13ce7c4090332ffa81ceb82
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Cannon_13
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 2240
+        width: 770
+        height: 560
+      alignment: 9
+      pivot: {x: 0.55, y: 0.34}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47177f0e0f938db44bd45dd08f8ad1c9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Cannon_14
+      rect:
+        serializedVersion: 2
+        x: 1540
+        y: 2240
+        width: 770
+        height: 560
+      alignment: 9
+      pivot: {x: 0.55, y: 0.34}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26dd13d1990be3b4cbfd48218b10870b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Cannon_15
+      rect:
+        serializedVersion: 2
+        x: 2310
+        y: 2240
+        width: 770
+        height: 560
+      alignment: 9
+      pivot: {x: 0.55, y: 0.34}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e412bec9871d67c4d9a49264f31ff1d4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Cannon_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1680
+        width: 770
+        height: 560
+      alignment: 9
+      pivot: {x: 0.55, y: 0.34}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63bfb6b0d53992c4c8cbffb8438bdbb5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Cannon_17
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 1680
+        width: 770
+        height: 560
+      alignment: 9
+      pivot: {x: 0.55, y: 0.34}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f71b32adcef43314ebf8812839466a8f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Cannon_18
+      rect:
+        serializedVersion: 2
+        x: 1540
+        y: 1680
+        width: 770
+        height: 560
+      alignment: 9
+      pivot: {x: 0.55, y: 0.34}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ece723e0ee6d1e148beb15c4bca21dc2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Cannon_19
+      rect:
+        serializedVersion: 2
+        x: 2310
+        y: 1680
+        width: 770
+        height: 560
+      alignment: 9
+      pivot: {x: 0.55, y: 0.34}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93358bf4c1ba70342ae450b0d64bb7f4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Cannon_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1120
+        width: 770
+        height: 560
+      alignment: 9
+      pivot: {x: 0.55, y: 0.34}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67e5228f6a964574bb19b44e62263fae
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Cannon_21
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 1120
+        width: 770
+        height: 560
+      alignment: 9
+      pivot: {x: 0.55, y: 0.34}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 515c1082e5e230d408dbdfbe09d0bde5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Cannon_22
+      rect:
+        serializedVersion: 2
+        x: 1540
+        y: 1120
+        width: 770
+        height: 560
+      alignment: 9
+      pivot: {x: 0.55, y: 0.34}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bfcd1839a89135409a937b965b897f6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Cannon_23
+      rect:
+        serializedVersion: 2
+        x: 2310
+        y: 1120
+        width: 770
+        height: 560
+      alignment: 9
+      pivot: {x: 0.55, y: 0.34}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 621926eea1a19c241b157f0ed7dabba7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Cannon_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 560
+        width: 770
+        height: 560
+      alignment: 9
+      pivot: {x: 0.55, y: 0.34}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42c0b773c72f8974385b12adf33a9e7b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Cannon_25
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 560
+        width: 770
+        height: 560
+      alignment: 9
+      pivot: {x: 0.55, y: 0.34}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56730980ed204c041913fd19f721b099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Cannon_26
+      rect:
+        serializedVersion: 2
+        x: 1540
+        y: 560
+        width: 770
+        height: 560
+      alignment: 9
+      pivot: {x: 0.55, y: 0.34}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbf0421145b95214fa3952018bc02b48
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Cannon_27
+      rect:
+        serializedVersion: 2
+        x: 2310
+        y: 560
+        width: 770
+        height: 560
+      alignment: 9
+      pivot: {x: 0.55, y: 0.34}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2435d710b28962c4c84695231759afa7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Cannon_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 770
+        height: 560
+      alignment: 9
+      pivot: {x: 0.55, y: 0.34}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7dbee639751472646baf864be83c45f3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Cannon_29
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 0
+        width: 770
+        height: 560
+      alignment: 9
+      pivot: {x: 0.55, y: 0.34}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 003ddcbed48a0c240a8cfd31336c1f66
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Cannon_30
+      rect:
+        serializedVersion: 2
+        x: 1540
+        y: 0
+        width: 770
+        height: 560
+      alignment: 9
+      pivot: {x: 0.55, y: 0.34}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b3fbe2e710ab0e4fb01688175a43c91
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Cannon_31
+      rect:
+        serializedVersion: 2
+        x: 2310
+        y: 0
+        width: 770
+        height: 560
+      alignment: 9
+      pivot: {x: 0.55, y: 0.34}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6fa5b8c6c05a1b47b09ffc20b1f44f1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 1092267d1278cfa4c98ca457ecd77939
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,771 @@
+fileFormatVersion: 2
+guid: ad0917cf829c69444b3871901f2b8181
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Boss_Cannon Intro_0
+    21300002: Boss_Cannon Intro_1
+    21300004: Boss_Cannon Intro_2
+    21300006: Boss_Cannon Intro_3
+    21300008: Boss_Cannon Intro_4
+    21300010: Boss_Cannon Intro_5
+    21300012: Boss_Cannon Intro_6
+    21300014: Boss_Cannon Intro_7
+    21300016: Boss_Cannon Intro_8
+    21300018: Boss_Cannon Intro_9
+    21300020: Boss_Cannon Intro_10
+    21300022: Boss_Cannon Intro_11
+    21300024: Boss_Cannon Intro_12
+    21300026: Boss_Cannon Intro_13
+    21300028: Boss_Cannon Intro_14
+    21300030: Boss_Cannon Intro_15
+    21300032: Boss_Cannon Intro_16
+    21300034: Boss_Cannon Intro_17
+    21300036: Boss_Cannon Intro_18
+    21300038: Boss_Cannon Intro_19
+    21300040: Boss_Cannon Intro_20
+    21300042: Boss_Cannon Intro_21
+    21300044: Boss_Cannon Intro_22
+    21300046: Boss_Cannon Intro_23
+    21300048: Boss_Cannon Intro_24
+    21300050: Boss_Cannon Intro_25
+    21300052: Boss_Cannon Intro_26
+    21300054: Boss_Cannon Intro_27
+    21300056: Boss_Cannon Intro_28
+    21300058: Boss_Cannon Intro_29
+    21300060: Boss_Cannon Intro_30
+    21300062: Boss_Cannon Intro_31
+  externalObjects: {}
+  serializedVersion: 7
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Boss_Cannon Intro_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3920
+        width: 770
+        height: 560
+      alignment: 9
+      pivot: {x: 0.55, y: 0.34}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8635496eda3e714292739f64591e350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Cannon Intro_1
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 3920
+        width: 770
+        height: 560
+      alignment: 9
+      pivot: {x: 0.55, y: 0.34}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45c4cedc40d337e46b0d83dd63d8fcad
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Cannon Intro_2
+      rect:
+        serializedVersion: 2
+        x: 1540
+        y: 3920
+        width: 770
+        height: 560
+      alignment: 9
+      pivot: {x: 0.55, y: 0.34}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91f86243dc4e9a045a1d5e345861552b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Cannon Intro_3
+      rect:
+        serializedVersion: 2
+        x: 2310
+        y: 3920
+        width: 770
+        height: 560
+      alignment: 9
+      pivot: {x: 0.55, y: 0.34}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d66692e473f12c458490c08aac4d8e1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Cannon Intro_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3360
+        width: 770
+        height: 560
+      alignment: 9
+      pivot: {x: 0.55, y: 0.34}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8d2e6abc570b064b8d7e5b0841a057e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Cannon Intro_5
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 3360
+        width: 770
+        height: 560
+      alignment: 9
+      pivot: {x: 0.55, y: 0.34}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1b30ff56d46f7e4dad51ecc856d960a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Cannon Intro_6
+      rect:
+        serializedVersion: 2
+        x: 1540
+        y: 3360
+        width: 770
+        height: 560
+      alignment: 9
+      pivot: {x: 0.55, y: 0.34}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e118bc64e3681644cb83da56672f6e62
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Cannon Intro_7
+      rect:
+        serializedVersion: 2
+        x: 2310
+        y: 3360
+        width: 770
+        height: 560
+      alignment: 9
+      pivot: {x: 0.55, y: 0.34}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afa301b68c271aa4880c32439abc6fba
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Cannon Intro_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2800
+        width: 770
+        height: 560
+      alignment: 9
+      pivot: {x: 0.55, y: 0.34}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27279c72692a03c49a739b3f208877bf
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Cannon Intro_9
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 2800
+        width: 770
+        height: 560
+      alignment: 9
+      pivot: {x: 0.55, y: 0.34}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f7e72744676c954b8ccef09b37157ef
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Cannon Intro_10
+      rect:
+        serializedVersion: 2
+        x: 1540
+        y: 2800
+        width: 770
+        height: 560
+      alignment: 9
+      pivot: {x: 0.55, y: 0.34}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6555a34f373835d4d965b1124ec3a053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Cannon Intro_11
+      rect:
+        serializedVersion: 2
+        x: 2310
+        y: 2800
+        width: 770
+        height: 560
+      alignment: 9
+      pivot: {x: 0.55, y: 0.34}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c71b3583dc68ec4495ecb745d99dfb0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Cannon Intro_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2240
+        width: 770
+        height: 560
+      alignment: 9
+      pivot: {x: 0.55, y: 0.34}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd8565776985d0046821b50311d61421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Cannon Intro_13
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 2240
+        width: 770
+        height: 560
+      alignment: 9
+      pivot: {x: 0.55, y: 0.34}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5effc0dfc6601cc48a715aafa9e2092d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Cannon Intro_14
+      rect:
+        serializedVersion: 2
+        x: 1540
+        y: 2240
+        width: 770
+        height: 560
+      alignment: 9
+      pivot: {x: 0.55, y: 0.34}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8aadee0a1f379ed40b7f0186f7d027f6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Cannon Intro_15
+      rect:
+        serializedVersion: 2
+        x: 2310
+        y: 2240
+        width: 770
+        height: 560
+      alignment: 9
+      pivot: {x: 0.55, y: 0.34}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea2a3199ee069bb4bb938237dd153259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Cannon Intro_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1680
+        width: 770
+        height: 560
+      alignment: 9
+      pivot: {x: 0.55, y: 0.34}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fd793fb001bf6f488b0eae0fa62577d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Cannon Intro_17
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 1680
+        width: 770
+        height: 560
+      alignment: 9
+      pivot: {x: 0.55, y: 0.34}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2eeee04631e1c3e4d8f82138175d37bb
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Cannon Intro_18
+      rect:
+        serializedVersion: 2
+        x: 1540
+        y: 1680
+        width: 770
+        height: 560
+      alignment: 9
+      pivot: {x: 0.55, y: 0.34}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 194b4c63a832d4b4fa832f1ffe320ccd
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Cannon Intro_19
+      rect:
+        serializedVersion: 2
+        x: 2310
+        y: 1680
+        width: 770
+        height: 560
+      alignment: 9
+      pivot: {x: 0.55, y: 0.34}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c02bca0300d7544c9c1767502da29ef
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Cannon Intro_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1120
+        width: 770
+        height: 560
+      alignment: 9
+      pivot: {x: 0.55, y: 0.34}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2175a98ebdb0d1b479913dee3b27d709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Cannon Intro_21
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 1120
+        width: 770
+        height: 560
+      alignment: 9
+      pivot: {x: 0.55, y: 0.34}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33077cd815a7a9f4f89228d728d40a21
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Cannon Intro_22
+      rect:
+        serializedVersion: 2
+        x: 1540
+        y: 1120
+        width: 770
+        height: 560
+      alignment: 9
+      pivot: {x: 0.55, y: 0.34}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b8ebee2c5453e14a85ef8403343ef7d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Cannon Intro_23
+      rect:
+        serializedVersion: 2
+        x: 2310
+        y: 1120
+        width: 770
+        height: 560
+      alignment: 9
+      pivot: {x: 0.55, y: 0.34}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c092b5280a2a6b940bcd84b0b2a987b4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Cannon Intro_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 560
+        width: 770
+        height: 560
+      alignment: 9
+      pivot: {x: 0.55, y: 0.34}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e9bd30ad00139947b90e23cca2fbf40
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Cannon Intro_25
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 560
+        width: 770
+        height: 560
+      alignment: 9
+      pivot: {x: 0.55, y: 0.34}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03c21cf7d898ace4eae888d0efd1929d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Cannon Intro_26
+      rect:
+        serializedVersion: 2
+        x: 1540
+        y: 560
+        width: 770
+        height: 560
+      alignment: 9
+      pivot: {x: 0.55, y: 0.34}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60330c07f3fd7144bb8c8b7f60b00b7c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Cannon Intro_27
+      rect:
+        serializedVersion: 2
+        x: 2310
+        y: 560
+        width: 770
+        height: 560
+      alignment: 9
+      pivot: {x: 0.55, y: 0.34}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61d719d452691124aa6f7c68a31cde0f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Cannon Intro_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 770
+        height: 560
+      alignment: 9
+      pivot: {x: 0.55, y: 0.34}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eefc0c3f3d11b9644bc0d958d13c20c2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Cannon Intro_29
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 0
+        width: 770
+        height: 560
+      alignment: 9
+      pivot: {x: 0.55, y: 0.34}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc8c452e714c43842b8ab9c2f285d7e6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Cannon Intro_30
+      rect:
+        serializedVersion: 2
+        x: 1540
+        y: 0
+        width: 770
+        height: 560
+      alignment: 9
+      pivot: {x: 0.55, y: 0.34}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a2ee68f0431ac5418f966e36a2e6c20
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Cannon Intro_31
+      rect:
+        serializedVersion: 2
+        x: 2310
+        y: 0
+        width: 770
+        height: 560
+      alignment: 9
+      pivot: {x: 0.55, y: 0.34}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b306f710ce06ff49aa46bd2acd32cc5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: bf3e6374d2097b04ea04921528f8fcc4
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
