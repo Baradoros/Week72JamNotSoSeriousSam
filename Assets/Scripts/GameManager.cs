@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour {
     public static GameManager manager;
     public int score = 0;
     public int level = 1;
+    public float timeLimit = 60;
 
     [Header("Cursor Variables")]
     public Texture2D cursorTexture = null;
