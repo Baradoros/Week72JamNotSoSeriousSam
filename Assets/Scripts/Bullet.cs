@@ -19,8 +19,8 @@ public class Bullet : MonoBehaviour {
 	}
 
     void OnCollisionEnter2D(Collision2D collision) {
-        if(collision.gameObject.CompareTag("Enemy")
-            || collision.gameObject.CompareTag("Enemy Bullet"))
+        if (bulletHitPrefab 
+            && (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Enemy Bullet")))
         {
             GameObject bulletHit = Instantiate(bulletHitPrefab, transform.position, Quaternion.identity);
         }
