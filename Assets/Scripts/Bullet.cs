@@ -7,7 +7,10 @@ public class Bullet : MonoBehaviour {
 
     private Rigidbody2D rb2d;
 
-	void Start () {
+    [SerializeField]
+    private GameObject bulletHitPrefab;
+
+    void Start () {
         rb2d = GetComponent<Rigidbody2D>();
 	}
 	
@@ -16,6 +19,11 @@ public class Bullet : MonoBehaviour {
 	}
 
     void OnCollisionEnter2D(Collision2D collision) {
+        if(collision.gameObject.CompareTag("Enemy")
+            || collision.gameObject.CompareTag("Enemy Bullet"))
+        {
+            GameObject bulletHit = Instantiate(bulletHitPrefab, transform.position, Quaternion.identity);
+        }
         Destroy(gameObject);
     }
 }

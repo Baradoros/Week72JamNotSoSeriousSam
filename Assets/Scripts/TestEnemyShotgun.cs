@@ -78,6 +78,7 @@ public class TestEnemyShotgun : MonoBehaviour {
         thisRigidbody2D = GetComponent<Rigidbody2D>(); //Setting this Rigidbody2D values here
         playerObject = GameObject.FindGameObjectWithTag("Player"); //Find Player by tag and passing it here. To be used to locate player for shooting
         audioSource = gameObject.GetComponent<AudioSource>(); //Setting value of the audioSource variable
+        gameObject.tag = "Enemy";
 
         //Getting the number of the starting point here and passing value of starting_Points
         starting_Point = Random.Range(0, 4); //Setting a random value here
@@ -184,7 +185,8 @@ public class TestEnemyShotgun : MonoBehaviour {
             Quaternion.AngleAxis(angle + bulletSpread, Vector3.forward)
         };
         foreach (Quaternion bulletAngle in angles) {
-            Instantiate(enemyBullet, bulletSpawner.position, bulletAngle); //Instantiating the bullet here
+           GameObject bullet = Instantiate(enemyBullet, bulletSpawner.position, bulletAngle); //Instantiating the bullet here
+            bullet.gameObject.tag = "Enemy bullet";
         }
 
         //Handling sound here
