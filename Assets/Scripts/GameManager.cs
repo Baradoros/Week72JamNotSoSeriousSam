@@ -13,7 +13,7 @@ using DG.Tweening;
 public class GameManager : MonoBehaviour {
 
 
-    // Public referrence to this script so any GameObject can call these methods
+    // Public reference to this script so any GameObject can call these methods
     public static GameManager manager;
     public GameObject player;
     public GameObject enemySpawner;
@@ -77,6 +77,23 @@ public class GameManager : MonoBehaviour {
 
 
     #region Utility Methods
+    //Reset variables to the new game manager values set
+    void ResetVariables()
+    {
+        //Main variables
+        GameManager.manager.player = player;
+        GameManager.manager.enemySpawner = enemySpawner;
+        GameManager.manager.timeLimit = timeLimit;
+
+        //Cursor variables
+        GameManager.manager.cursorTexture = cursorTexture;
+        GameManager.manager.cursorOffset = cursorOffset;
+
+        //Camera variables
+        GameManager.manager.mainCamera = mainCamera;
+        GameManager.manager.scoreAreaLocation = scoreAreaLocation;
+        GameManager.manager.lerpSpeed = lerpSpeed;
+    }
 
     // Accepts what level we're on and returns how many enemies we should have
     public float LevelToDifficultyCurve(int level) {
