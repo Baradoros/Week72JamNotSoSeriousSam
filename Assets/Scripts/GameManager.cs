@@ -20,6 +20,15 @@ public class GameManager : MonoBehaviour {
     public Texture2D cursorTexture = null;
     private Vector2 cursorOffset = Vector2.zero;
 
+    [Header("Camera Variables")]
+    public Camera mainCamera;
+    public enum CameraPosition { PLAY_AREA, SCORE_AREA };
+    public Vector3 playAreaLocation = new Vector3();
+    public Vector3 scoreAreaLocation = new Vector3();
+    public float lerpSpeed;
+    [HideInInspector]
+    public CameraPosition cameraPosition = CameraPosition.PLAY_AREA;
+
     void Start() {
 
         // Ensure there can only be one GameManager in a scene
@@ -39,6 +48,18 @@ public class GameManager : MonoBehaviour {
         } else
         {
             Cursor.SetCursor(cursorTexture, cursorOffset, CursorMode.Auto);
+        }
+    }
+
+    private void Update() {
+        
+        // Handle Camera Movement
+        if (cameraPosition == CameraPosition.PLAY_AREA && mainCamera.transform.position != playAreaLocation) {
+            Vector3.Lerp(mainCamera.transform.position, playAreaLocation, lerpSpeed);
+        }
+
+        if (cameraPosition == CameraPosition.SCORE_AREA && mainCamera.transform.position != scoreAreaLocation) {
+            Vector3.Lerp(mainCamera.transform.position, scoreAreaLocation, lerpSpeed);
         }
     }
 

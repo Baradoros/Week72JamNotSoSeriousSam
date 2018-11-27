@@ -56,8 +56,8 @@ public class EnemySpawner : MonoBehaviour {
 
     // Spawn a wave of enemies = half the difficulty
     private void SpawnWave() {
-        Debug.Log("Spawning " + difficulty / 2 + " enemies");
-        //Spawn a wave of enemies containint half of difficulty enemies
+        // Debug.Log("Spawning " + difficulty / 2 + " enemies");
+
         for (int i = 0; i < difficulty / 2.0f; i++) {
             GameObject enemy = Instantiate(GetEnemyFromArray(), new Vector3(this.transform.position.x + Random.Range(-2, 2), this.transform.position.y, 0), Quaternion.identity);
             enemyList.Add(enemy);
