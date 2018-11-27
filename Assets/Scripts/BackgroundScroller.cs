@@ -23,8 +23,8 @@ public class BackgroundScroller : MonoBehaviour {
 
         // Spawn Initial background on camera before scrolling begins
         distance = background.GetComponent<SpriteRenderer>().bounds.size.x * background.transform.localScale.x;
-        GameObject bg = Instantiate(background, new Vector3(distance, 0, 0), Quaternion.identity);
-        bg = Instantiate(background, Vector3.zero, Quaternion.identity);
+        GameObject bg = Instantiate(background, new Vector3(distance, 0, 1), Quaternion.identity);
+        bg = Instantiate(background, new Vector3(0, 0, 1), Quaternion.identity);
         bgList.Add(bg);
         SpawnBackground();
     }
@@ -70,7 +70,7 @@ public class BackgroundScroller : MonoBehaviour {
     private void SpawnBackground() {
 
         // Spawn a background and add it to the list
-        GameObject bg = Instantiate(background, new Vector3(distance * 2, 0, 0), Quaternion.identity);
+        GameObject bg = Instantiate(background, new Vector3(distance * 2, 0, 1), Quaternion.identity);
         bgList.Add(bg);
 
         // Spawn Parallax

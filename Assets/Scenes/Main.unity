@@ -215,6 +215,10 @@ Prefab:
       propertyPath: m_Name
       value: Test_Enemy_MiniGuns (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1450269416753834, guid: 7039fd66e8550ee43bedb142ab859c3c, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7039fd66e8550ee43bedb142ab859c3c, type: 2}
   m_IsPrefabAsset: 0
@@ -426,6 +430,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: 0
   level: 1
+  timeLimit: 60
   cursorTexture: {fileID: 2800000, guid: 1ae9f1ec7efeb95419dd9ad72ffe2b13, type: 3}
   mainCamera: {fileID: 519420031}
   playAreaLocation: {x: 0, y: 0, z: -10}
@@ -565,6 +570,10 @@ Prefab:
       propertyPath: m_Name
       value: Test_Enemy_MiniGuns (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1450269416753834, guid: 7039fd66e8550ee43bedb142ab859c3c, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7039fd66e8550ee43bedb142ab859c3c, type: 2}
   m_IsPrefabAsset: 0
@@ -606,6 +615,10 @@ Prefab:
     - target: {fileID: 4881962275253688, guid: dfcc36a42c515644e9e90cbaca00dd40, type: 2}
       propertyPath: m_RootOrder
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1450269416753834, guid: dfcc36a42c515644e9e90cbaca00dd40, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dfcc36a42c515644e9e90cbaca00dd40, type: 2}
@@ -776,7 +789,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 1412950790}
-  timeLimit: 180
+  timeLimit: 60
 --- !u!1 &994242639
 GameObject:
   m_ObjectHideFlags: 0
@@ -1016,6 +1029,10 @@ Prefab:
       propertyPath: m_Name
       value: Test_Enemy_Shotgun (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1450269416753834, guid: dfcc36a42c515644e9e90cbaca00dd40, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dfcc36a42c515644e9e90cbaca00dd40, type: 2}
   m_IsPrefabAsset: 0
@@ -1194,6 +1211,11 @@ Prefab:
       propertyPath: shotgunFireDelay
       value: 0.25
       objectReference: {fileID: 0}
+    - target: {fileID: 114468235458027546, guid: 501e1df226e21694f9edf651d186ff88,
+        type: 2}
+      propertyPath: speed
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 501e1df226e21694f9edf651d186ff88, type: 2}
   m_IsPrefabAsset: 0
@@ -1304,6 +1326,10 @@ Prefab:
     - target: {fileID: 4233518195259384, guid: 6b50ec4b53a6aa54994dc2f527c4bb9e, type: 2}
       propertyPath: m_RootOrder
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1975053920294004, guid: 6b50ec4b53a6aa54994dc2f527c4bb9e, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b50ec4b53a6aa54994dc2f527c4bb9e, type: 2}
@@ -1524,7 +1550,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1450269416753834, guid: 7039fd66e8550ee43bedb142ab859c3c, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7039fd66e8550ee43bedb142ab859c3c, type: 2}
@@ -1802,7 +1828,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 3.01, y: 0}
+  m_Offset: {x: 2.38, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1827,7 +1853,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 6, y: 3.3}
+  m_Offset: {x: 6, y: 2.49}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1838,7 +1864,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 6, y: 0.1}
+  m_Size: {x: 8, y: 0.1}
   m_EdgeRadius: 0
 --- !u!61 &1981507286
 BoxCollider2D:
@@ -1863,7 +1889,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 6, y: 0.1}
+  m_Size: {x: 8, y: 0.1}
   m_EdgeRadius: 0
 --- !u!1001 &2131044806
 Prefab:

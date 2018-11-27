@@ -16,6 +16,10 @@ public class EnemySpawner : MonoBehaviour {
 	void Start () {
         level = GameManager.manager.level;
         difficulty = GameManager.manager.LevelToDifficultyCurve(level);
+
+        // Spawn Initial enemies up to difficulty cap
+        SpawnWave();
+        SpawnWave();
 	}
 
 	void Update () {

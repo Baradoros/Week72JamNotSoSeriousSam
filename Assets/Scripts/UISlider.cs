@@ -7,11 +7,12 @@ public class UISlider : MonoBehaviour {
 
     public Slider slider;
     [HideInInspector]
-    public float timeLimit = GameManager.manager.timeLimit;
+    public float timeLimit;
 
     private float nextTime = 0;
 
     private void Start() {
+        timeLimit = GameManager.manager.timeLimit;
         slider.maxValue = timeLimit;
         slider.value = 0;
     }

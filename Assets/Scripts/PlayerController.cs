@@ -40,8 +40,9 @@ public class PlayerController : MonoBehaviour {
     [HideInInspector]
     public bool canMove = true;
     [HideInInspector]
-    public Vector3 mousePosition; //To hold the mousePosition
+    public Vector3 mousePosition;
 
+    // How different vertical speed is from horizontal speed
     private float verticalSpeedModifier;
     private Animator anim;
     private Rigidbody2D rb2d;
@@ -63,7 +64,7 @@ public class PlayerController : MonoBehaviour {
         rb2d = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         audio = GetComponent<AudioSource>();
-        verticalSpeedModifier = speed * 0.8f;
+        verticalSpeedModifier = speed * 1.2f;
     } //End of Start
 
     //Start of Update
