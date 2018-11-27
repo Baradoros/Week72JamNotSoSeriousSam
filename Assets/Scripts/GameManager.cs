@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviour {
             DontDestroyOnLoad(gameObject);
         }
         else if (manager != this) {
+            ResetVariables();
             Destroy(gameObject);
         }
 
