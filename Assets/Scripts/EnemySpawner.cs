@@ -24,21 +24,43 @@ public class EnemySpawner : MonoBehaviour {
 		if (enemyList.Count < difficulty/ 2.0f) {
             SpawnWave();
         }
+
+        // Remove destroyed objects from enemyList
+        foreach(GameObject enemy in enemyList) {
+            if (enemy == null) {
+                enemyList.Remove(enemy);
+                break;      // To avoid IndexOutOfBounds
+            }
+        }
 	}
 
     public GameObject GetEnemyFromArray() {
 
-        // Add functionality to make earlier indexes more likely than later such that the numner of Miniguns > Shotguns > Rockets
-        GameObject enemy = enemies[Random.Range(0, enemies.Length)];
+        // Functionality to make earlier indexes more likely than later such that the numner of Miniguns > Shotguns > Rockets
+        // 40% chance of minigun enemy
+        // 35% chance of shotgun enemy
+        // 25% chance of rocket enemy
+        float chance = Random.Range(0, 100);
+        int select = 0;
+        if (chance < 40)
+            select = 0;
+        else if (chance > 40 && chance < 75)
+            select = 1;
+        else if (chance > 75)
+            select = 2;
+
+
+        GameObject enemy = enemies[select];
         return enemy;
     }
 
     // Spawn a wave of enemies = half the difficulty
     private void SpawnWave() {
-
+        Debug.Log("Spawning " + difficulty / 2 + " enemies");
         //Spawn a wave of enemies containint half of difficulty enemies
         for (int i = 0; i < difficulty / 2.0f; i++) {
-            GameObject enemy = Instantiate(GetEnemyFromArray(), new Vector3(Random.Range(-2, 2), transform.position.y, 0), Quaternion.identity);
+            GameObject enemy = Instantiate(GetEnemyFromArray(), new Vector3(this.transform.position.x + Random.Range(-2, 2), this.transform.position.y, 0), Quaternion.identity);
+            enemyList.Add(enemy);
         }
     }
 }

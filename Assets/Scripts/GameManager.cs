@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour {
     // Public referrence to this script so any GameObject can call these methods
     public static GameManager manager;
     public int score = 0;
-    public int level;
+    public int level = 1;
 
     [Header("Cursor Variables")]
     public Texture2D cursorTexture = null;
@@ -46,10 +46,10 @@ public class GameManager : MonoBehaviour {
 
     // Accepts what level we're on and returns how many enemies we should have
     public float LevelToDifficultyCurve(int level) {
-        // Difficulty curve y = 10log(1.5x)
+        // Difficulty curve y = log(2x)
 
-        float verticalStretch = 10;             // Raises the difficulty cap
-        float horizontalStretch = 1.5f;         // Smooths and elongates the difficulty curve
+        float verticalStretch = 1;             // Raises the difficulty cap
+        float horizontalStretch = 2f;         // Smooths and elongates the difficulty curve
         float verticalShift = 0;                // Increases starting difficulty
         float horizontalShift = 0;              // Increases level number that curve starts at (keep at 0)
 
