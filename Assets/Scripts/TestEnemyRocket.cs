@@ -75,6 +75,7 @@ public class TestEnemyRocket : MonoBehaviour {
         thisRigidbody2D = GetComponent<Rigidbody2D>(); //Setting this Rigidbody2D values here
         playerObject = GameObject.FindGameObjectWithTag("Player"); //Find Player by tag and passing it here. To be used to locate player for shooting
         audioSource = gameObject.GetComponent<AudioSource>(); //Setting value of the audioSource variable
+        gameObject.tag = "Enemy";
 
         //Getting the number of the starting point here and passing value of starting_Points
         starting_Point = Random.Range(0, 4); //Setting a random value here
@@ -178,6 +179,7 @@ public class TestEnemyRocket : MonoBehaviour {
 
         GameObject rocket = Instantiate(enemyBullet, bulletSpawner.position, rotation);
         rocket.GetComponent<RocketMovement>().Target = playerObject.transform.position;
+        rocket.gameObject.tag = "Enemy bullet";
 
         //Handling sound here
         audioSource.Stop();
