@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -17,18 +18,16 @@ public class GameManager : MonoBehaviour {
     public int level = 1;
     public float timeLimit = 60;
 
+
     [Header("Cursor Variables")]
     public Texture2D cursorTexture = null;
     private Vector2 cursorOffset = Vector2.zero;
 
     [Header("Camera Variables")]
     public Camera mainCamera;
-    public enum CameraPosition { PLAY_AREA, SCORE_AREA };
     public Vector3 playAreaLocation = new Vector3();
     public Vector3 scoreAreaLocation = new Vector3();
     public float lerpSpeed;
-    [HideInInspector]
-    public CameraPosition cameraPosition = CameraPosition.PLAY_AREA;
 
     void Start() {
 
@@ -52,17 +51,14 @@ public class GameManager : MonoBehaviour {
         }
     }
 
-    private void Update() {
-        
-        // Handle Camera Movement
-        if (cameraPosition == CameraPosition.PLAY_AREA && mainCamera.transform.position != playAreaLocation) {
-            Vector3.Lerp(mainCamera.transform.position, playAreaLocation, lerpSpeed);
-        }
-
-        if (cameraPosition == CameraPosition.SCORE_AREA && mainCamera.transform.position != scoreAreaLocation) {
-            Vector3.Lerp(mainCamera.transform.position, scoreAreaLocation, lerpSpeed);
-        }
+    public void GoToScoreScreen() {
+        mainCamera.transform.position = Vector3.Lerp(mainCamera.transform.position, scoreAreaLocation, Time.deltaTime * lerpSpeed);
     }
+
+    public void GoToPlayScreen() {
+        mainCamera.transform.position = Vector3.Lerp(mainCamera.transform.position, playAreaLocation, Time.deltaTime * lerpSpeed);
+    }
+
 
     #region Utility Methods
 

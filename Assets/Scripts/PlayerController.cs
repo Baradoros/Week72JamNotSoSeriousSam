@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour {
     {
         spriteRenderer = this.gameObject.GetComponent<SpriteRenderer>();
         spriteColor = spriteRenderer.color;
-        flickerWait = new WaitForSeconds(0.2f);
+        flickerWait = new WaitForSeconds(0.1f);
     } //End of Awake
 
     void Start()
