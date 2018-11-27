@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// A script attached to the Player. Handles movement, life, shooting and weapon changes
@@ -31,8 +33,11 @@ public class PlayerController : MonoBehaviour {
     [Header("Flicker Player variables")]
     public SpriteRenderer spriteRenderer; //To be used for the flicker effect
     public Color spriteColor; //To be used to store the color and allow the flicker effect by minipulating it's a value
-    private WaitForSeconds flickerWait; //Used in FlickerPlayer IEnumerator. Controls the flickering of the player.
     public bool isFlickering; //Turns true when player is flickering
+    public float flickerDuration;
+    public int flickerCount;
+
+    private WaitForSeconds flickerWait; //Used in FlickerPlayer IEnumerator. Controls the flickering of the player.
 
     [Space]
     public AudioClip rev;
@@ -54,9 +59,9 @@ public class PlayerController : MonoBehaviour {
     #region Built-in Functions
     private void Awake() //Start of Awake
     {
-        spriteRenderer = this.gameObject.GetComponent<SpriteRenderer>();
+        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         spriteColor = spriteRenderer.color;
-        flickerWait = new WaitForSeconds(0.1f);
+        flickerWait = new WaitForSeconds(flickerDuration);
     } //End of Awake
 
     void Start()
@@ -124,8 +129,12 @@ public class PlayerController : MonoBehaviour {
     /// <param name="collision"></param>
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("EnemyBullet") && !isFlickering) //Handling collisions with EnemyBullet tagged objects here. Use this to control player damage and effects on player
+        if (isFlickering) {
+            return;
+        }
+        if (collision.gameObject.CompareTag("EnemyBullet")) //Handling collisions with EnemyBullet tagged objects here. Use this to control player damage and effects on player
         {
+            TakeDamage();
             StartCoroutine(FlickerPlayer()); //Starting FlickerPlayer routine to start flickering player here
         } //End of if statement
     } //End of OnCollisionEnter
@@ -136,9 +145,22 @@ public class PlayerController : MonoBehaviour {
     /// </summary>
     /// <param name="collision"></param>
     private void OnTriggerEnter2D(Collider2D collision) {
-        if (collision.gameObject.CompareTag("Explosion") && !isFlickering) //Handling collisions with EnemyBullet tagged objects here. Use this to control player damage and effects on player
+        if (isFlickering) {
+            return;
+        }
+        if (collision.gameObject.CompareTag("Explosion"))
         {
+            TakeDamage();
             StartCoroutine(FlickerPlayer()); //Starting FlickerPlayer routine to start flickering player here
+        }
+    }
+
+    private void TakeDamage() {
+        health = Math.Max(0, health - 1);
+        isFlickering = true;
+
+        if (health <= 0) {
+            SceneManager.LoadScene("MainMenu");
         }
     }
 
@@ -190,32 +212,14 @@ public class PlayerController : MonoBehaviour {
     /// </summary>
     IEnumerator FlickerPlayer()
     {
-        isFlickering = true; //Turning this variable true here so that the player does not receive any other hit until flickering is complete
-
-        //First Flicker
-        spriteColor.a = 0.0f;
-        spriteRenderer.color = spriteColor;
-        yield return flickerWait;
-        spriteColor.a = 1.0f;
-        spriteRenderer.color = spriteColor;
-        yield return flickerWait;
-
-        //Second Flicker
-        spriteColor.a = 0.0f;
-        spriteRenderer.color = spriteColor;
-        yield return flickerWait;
-        spriteColor.a = 1.0f;
-        spriteRenderer.color = spriteColor;
-        yield return flickerWait;
-
-        //Third Flicker
-        spriteColor.a = 0.0f;
-        spriteRenderer.color = spriteColor;
-        yield return flickerWait;
-        spriteColor.a = 1.0f;
-        spriteRenderer.color = spriteColor;
-        yield return flickerWait;
-
+        for (var i = 0; i < flickerCount; i++) {
+            spriteColor.a = 0.0f;
+            spriteRenderer.color = spriteColor;
+            yield return flickerWait;
+            spriteColor.a = 1.0f;
+            spriteRenderer.color = spriteColor;
+            yield return flickerWait;
+        }
         isFlickering = false;
 
         yield return null;

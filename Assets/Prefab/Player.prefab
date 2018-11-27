@@ -55,7 +55,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1961310520425052}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.54, y: 0.07, z: -1}
+  m_LocalPosition: {x: 6.1, y: -1.04, z: -1}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children:
   - {fileID: 4603320517079942}
@@ -270,18 +270,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 5
-  speed: 8
-  carbineFireDelay: 0.2
+  speed: 10
+  carbineFireDelay: 0.1
   shotgunFireDelay: 0.25
-  minigunFireDelay: 0.1
+  minigunFireDelay: 0.03
   bullet: {fileID: 1483867198666466, guid: 72fccc430f68fcd458f12fe32e21519a, type: 2}
   bulletSpawn: {fileID: 4603320517079942}
   weaponSelected: 0
   spriteRenderer: {fileID: 0}
   spriteColor: {r: 0, g: 0, b: 0, a: 0}
   isFlickering: 0
+  flickerDuration: 0.1
+  flickerCount: 6
   rev: {fileID: 8300000, guid: 7f9590bb3739f8c48b309db90b136be4, type: 3}
   canMove: 1
+  canShoot: 1
   mousePosition: {x: 0, y: 0, z: 0}
 --- !u!212 &212931150572841320
 SpriteRenderer:
