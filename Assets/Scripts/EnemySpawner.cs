@@ -26,8 +26,19 @@ public class EnemySpawner : MonoBehaviour {
         }
 	}
 
+    public GameObject GetEnemyFromArray() {
+
+        // Add functionality to make earlier indexes more likely than later such that the numner of Miniguns > Shotguns > Rockets
+        GameObject enemy = enemies[Random.Range(0, enemies.Length)];
+        return enemy;
+    }
+
     // Spawn a wave of enemies = half the difficulty
     private void SpawnWave() {
 
+        //Spawn a wave of enemies containint half of difficulty enemies
+        for (int i = 0; i < difficulty / 2.0f; i++) {
+            GameObject enemy = Instantiate(GetEnemyFromArray(), new Vector3(Random.Range(-2, 2), transform.position.y, 0), Quaternion.identity);
+        }
     }
 }

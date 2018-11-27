@@ -99,7 +99,6 @@ public class Test_Enemy_Miniguns : MonoBehaviour {
         //Running this only when nextFire is less than zero and enemy has teached starting point
         if(nextFire < 0 && reachedStart)
         {
-            Debug.Log("Bullet was fired");
             ShootBullet(); //Calling ShootBullet here
         } //End of if statement
 
