@@ -87,7 +87,10 @@ public class GameManager : MonoBehaviour {
         Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
     }
 
-
+    public void GoToPlayScreen() {
+        // This method will need to revert everything done in GoToScoreScreen() as well as "soft reset" the game
+        // We need this method to set everything up to effectively start another level, but without a scene change
+    }
 
     #region Utility Methods
     //Reset variables to the new game manager values set
