@@ -58,6 +58,7 @@ public class GameManager : MonoBehaviour {
         // Ensure Main UI is active and Scorescreen UI is inactive
         UI.SetActive(true);
         scoreScreenUI.SetActive(false);
+        DOTween.RewindAll();
     }
 
     // [!] Anything that needs to happen when the game moves to the scorescreen happens here [!]
