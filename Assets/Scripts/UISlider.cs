@@ -12,7 +12,7 @@ public class UISlider : MonoBehaviour {
     private float nextTime = 0;
     private bool scoreScreen;
 
-    private void Start() {
+    public void InitSlider() {
         timeLimit = GameManager.manager.timeLimit;
         slider.maxValue = timeLimit;
         slider.value = 0;

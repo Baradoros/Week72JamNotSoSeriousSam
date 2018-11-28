@@ -17,7 +17,7 @@ public class ScoreRollUp : MonoBehaviour {
         score = GameManager.manager.score;
         if (rollScore) {
             initialScore = Mathf.Lerp(initialScore, score, 5 * Time.deltaTime);
-            this.GetComponent<Text>().text = Mathf.RoundToInt(initialScore).ToString().PadLeft(5, '0');
+            this.GetComponent<Text>().text = "Credits " + Mathf.RoundToInt(initialScore).ToString().PadLeft(5, '0');
 
         }
 	}

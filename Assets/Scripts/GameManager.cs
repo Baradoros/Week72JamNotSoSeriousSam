@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour {
 
     [Header("Camera Variables")]
     public Camera mainCamera;
+    public Vector3 mainAreaLocation = new Vector3(0f, 0f, -10f);
     public Vector3 scoreAreaLocation = new Vector3();
     public float lerpSpeed;
 
@@ -38,10 +39,8 @@ public class GameManager : MonoBehaviour {
         // Ensure there can only be one GameManager in a scene
         if (manager == null) {
             manager = this;
-            DontDestroyOnLoad(gameObject);
         }
         else if (manager != this) {
-            ResetVariables();
             Destroy(gameObject);
         }
 
@@ -59,6 +58,16 @@ public class GameManager : MonoBehaviour {
         UI.SetActive(true);
         scoreScreenUI.SetActive(false);
         DOTween.RewindAll();
+
+        //Reset/Initiate the UISlider to 0
+        UISlider slider = UI.GetComponentInChildren<UISlider>();
+        if (slider)
+        {
+            slider.InitSlider();
+        } else
+        {
+            Debug.Log("No UISlider found");
+        }
     }
 
     // [!] Anything that needs to happen when the game moves to the scorescreen happens here [!]
@@ -90,29 +99,44 @@ public class GameManager : MonoBehaviour {
     public void GoToPlayScreen() {
         // This method will need to revert everything done in GoToScoreScreen() as well as "soft reset" the game
         // We need this method to set everything up to effectively start another level, but without a scene change
+        // Enable Main UI and disable Score Screen UI
+        UI.SetActive(true);
+        scoreScreenUI.SetActive(false);
+
+        // Reset/Initiate the UISlider to 0
+        UISlider slider = UI.GetComponentInChildren<UISlider>();
+        if (slider)
+        {
+            slider.InitSlider();
+        }
+        else
+        {
+            Debug.Log("No UISlider found");
+        }
+
+        //Increment the level to next act
+        level++;
+
+        // quick snap camera to main screen position to give the restart effect
+        mainCamera.transform.DOMove(mainAreaLocation, lerpSpeed, false);
+
+        //Remove invulnerable and set player position to start position
+        player.GetComponent<PlayerController>().damagable = true;                                  // Set player invulnerable
+        player.GetComponent<PlayerController>().canShoot = true;                                   // Disable shooting
+        player.GetComponent<PlayerController>().canMove = true;                                    // Disable movement
+        player.transform.DOMove(new Vector3(6.1f, -1.4f, player.transform.position.z), lerpSpeed, false); // Move player to predetermined point for score screen
+        player.GetComponent<Rigidbody2D>().velocity = Vector3.zero;                                 // Zero out velocity
+
+        //enable enemyspawner
+        StartCoroutine(LoadSceneDelayed(3f)); //Enemies spawn only after a preset seconds
+        enemySpawner.SetActive(true);
+
+        // Set cursor texture back to default
+        Cursor.SetCursor(cursorTexture, cursorOffset, CursorMode.ForceSoftware);
     }
 
     #region Utility Methods
-    //Reset variables to the new game manager values set
-    void ResetVariables()
-    {
-        //Main variables
-        GameManager.manager.player = player;
-        GameManager.manager.enemySpawner = enemySpawner;
-        GameManager.manager.timeLimit = timeLimit;
-        GameManager.manager.UI = UI;
-        GameManager.manager.scoreScreenUI = scoreScreenUI;
-
-        //Cursor variables
-        GameManager.manager.cursorTexture = cursorTexture;
-        GameManager.manager.cursorOffset = cursorOffset;
-
-        //Camera variables
-        GameManager.manager.mainCamera = mainCamera;
-        GameManager.manager.scoreAreaLocation = scoreAreaLocation;
-        GameManager.manager.lerpSpeed = lerpSpeed;
-    }
-
+    
     // Accepts what level we're on and returns how many enemies we should have
     public float LevelToDifficultyCurve(int level) {
         // Difficulty curve y = log(2x)

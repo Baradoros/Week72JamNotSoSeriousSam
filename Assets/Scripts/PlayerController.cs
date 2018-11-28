@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour {
     {
         SemiAutoCarbine,
         Shotgun,
-        MiniGun
+        ChainGun
     }
 
     [Header("Weapon Variables")]
@@ -106,7 +106,7 @@ public class PlayerController : MonoBehaviour {
                     Instantiate(bullet, bulletSpawn.position, bullet2FireAngle); //Firing bullet2 here
                     Instantiate(bullet, bulletSpawn.position, bullet3FireAngle); //Firing bullet3 here
                     break;
-                case WeaponSelected.MiniGun:
+                case WeaponSelected.ChainGun:
                     NextFire = Time.time + minigunFireDelay; //Adding firing delay
                     Instantiate(bullet, bulletSpawn.position, GetAngleToMouse(bulletSpawn.position, GetMousePosition())); //Firing bullet here
                     break;
@@ -208,12 +208,21 @@ public class PlayerController : MonoBehaviour {
     }
 
     /// <summary>
-    /// Sets the Weapon Selected. This can be changed from a powerup / key bindings.
+    /// Sets the Weapon Selected.
     /// </summary>
-    /// <param name="newWeaponSelected"> the new weapon that needs to be selected.</param>
-    public void SetSelectedWeapon(WeaponSelected newWeaponSelected)
+    public void SelectWeaponCarbine()
     {
-        weaponSelected = newWeaponSelected;
+        weaponSelected = WeaponSelected.SemiAutoCarbine;
+    }
+
+    public void SelectWeaponShotgun()
+    {
+        weaponSelected = WeaponSelected.Shotgun;
+    }
+
+    public void SelectWeaponChainGun()
+    {
+        weaponSelected = WeaponSelected.ChainGun;
     }
 
     /// <summary>
