@@ -94,6 +94,10 @@ public class GameManager : MonoBehaviour {
         UI.SetActive(false);
         scoreScreenUI.SetActive(true);
 
+        // Rewind and play DOTween animations so shop animates on return trips
+        DOTween.RewindAll(true);
+        DOTween.PlayAll();
+
         // Move camera to scores screen position
         mainCamera.transform.DOMove(scoreAreaLocation, lerpSpeed, false);
 
@@ -117,7 +121,6 @@ public class GameManager : MonoBehaviour {
         // We need this method to set everything up to effectively start another level, but without a scene change
         // Enable Main UI and disable Score Screen UI
         UI.SetActive(true);
-        DOTween.RewindAll();
         scoreScreenUI.SetActive(false);
         player.GetComponent<PlayerController>().health = 5;
         player.GetComponent<PlayerController>().ResetHealthImages();
