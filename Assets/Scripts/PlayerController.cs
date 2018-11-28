@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using DG.Tweening;
 
 /// <summary>
 /// A script attached to the Player. Handles movement, life, shooting and weapon changes
@@ -41,6 +43,9 @@ public class PlayerController : MonoBehaviour {
 
     [Space]
     public AudioClip rev;
+
+    // Stores the images used for health
+    public Image[] healthImages;
 
     [HideInInspector]
     public bool canMove = true, canShoot = true, damagable = true;
@@ -163,6 +168,12 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
+    private void DamageHealthImages() {
+        if (health > 0) {
+            healthImages[(int)health - 1].DOColor(Color.red, 0.2f);
+        }
+    }
+
     private void TakeDamage() {
 
         // Don't take damage if player is invulnerable
@@ -170,6 +181,7 @@ public class PlayerController : MonoBehaviour {
             return;
 
         health = Math.Max(0, health - 1);
+        DamageHealthImages();
         isFlickering = true;
 
         if (health <= 0) {
