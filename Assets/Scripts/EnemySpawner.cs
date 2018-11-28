@@ -24,6 +24,12 @@ public class EnemySpawner : MonoBehaviour {
 
 	void Update () {
 
+        // Spawn maximum enemies if there are no enemies
+        if (enemyList.Count == 0) {
+            SpawnWave();
+            SpawnWave();
+        }
+
         // Wait for the player to kill half of the enemies before spawning another wave of them
 		if (enemyList.Count < difficulty/ 2.0f) {
             SpawnWave();
@@ -61,7 +67,6 @@ public class EnemySpawner : MonoBehaviour {
     // Spawn a wave of enemies = half the difficulty
     private void SpawnWave() {
         // Debug.Log("Spawning " + difficulty / 2 + " enemies");
-
         for (int i = 0; i < difficulty / 2.0f; i++) {
             GameObject enemy = Instantiate(GetEnemyFromArray(), new Vector3(this.transform.position.x + Random.Range(-2, 2), this.transform.position.y, 0), Quaternion.identity);
             enemyList.Add(enemy);

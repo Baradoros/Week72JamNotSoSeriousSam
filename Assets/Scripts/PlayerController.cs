@@ -168,9 +168,20 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
+    // Animated health bar
     private void DamageHealthImages() {
         if (health > 0) {
             healthImages[(int)health - 1].DOColor(Color.red, 0.2f);
+            healthImages[(int)health - 1].DOFade(0.0f, 1.0f);
+            healthImages[(int)health - 1].transform.DOScale(3.0f, 1.0f);
+        }
+    }
+
+    // Reset player health bar to default images
+    public void ResetHealthImages() {
+        foreach(Image img in healthImages) {
+            img.color = Color.white;
+            img.transform.localScale = Vector3.one;
         }
     }
 

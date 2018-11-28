@@ -102,6 +102,8 @@ public class GameManager : MonoBehaviour {
         // Enable Main UI and disable Score Screen UI
         UI.SetActive(true);
         scoreScreenUI.SetActive(false);
+        player.GetComponent<PlayerController>().health = 5;
+        player.GetComponent<PlayerController>().ResetHealthImages();
 
         // Reset/Initiate the UISlider to 0
         UISlider slider = UI.GetComponentInChildren<UISlider>();
