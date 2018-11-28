@@ -100,8 +100,8 @@ public class PlayerController : MonoBehaviour {
                 case WeaponSelected.Shotgun:
                     NextFire = Time.time + shotgunFireDelay; //Adding firing delay
                     Quaternion bullet1FireAngle = GetAngleToMouse(bulletSpawn.position, GetMousePosition(), 15);
-                    Quaternion bullet2FireAngle = bullet1FireAngle * Quaternion.Euler(0, 0, 45);
-                    Quaternion bullet3FireAngle = bullet1FireAngle * Quaternion.Euler(0, 0, -45);
+                    Quaternion bullet2FireAngle = bullet1FireAngle * Quaternion.Euler(0, 0, 10);
+                    Quaternion bullet3FireAngle = bullet1FireAngle * Quaternion.Euler(0, 0, -10);
                     Instantiate(bullet, bulletSpawn.position, bullet1FireAngle); //Firing bullet1 here
                     Instantiate(bullet, bulletSpawn.position, bullet2FireAngle); //Firing bullet2 here
                     Instantiate(bullet, bulletSpawn.position, bullet3FireAngle); //Firing bullet3 here
