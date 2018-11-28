@@ -8,6 +8,10 @@ public class EnemySpawner : MonoBehaviour {
 
     [Tooltip("Place enemy prefabs to spawn here")]
     public GameObject[] enemies;            // Store enemy prefabs to spawn here and pick one from the array in SpawnWave()
+    [Tooltip("Spawn weights for the enemies in enemies list")]
+    public float[] spawnWeights;
+
+    private float[] adjustedWeights;
     private float difficulty;                                           // The total ammount of enemies allowed on screen at once
     private List<GameObject> enemyList = new List<GameObject>();
 
@@ -15,6 +19,26 @@ public class EnemySpawner : MonoBehaviour {
         level = GameManager.manager.level;
         difficulty = GameManager.manager.LevelToDifficultyCurve(level);
         Debug.Log("Difficulty: " + difficulty);
+
+        if(enemies.Length != spawnWeights.Length)
+        {
+            Debug.LogError("Enemies and spawnWeights are not matching");
+        }
+
+        //Normalizing the spawnWeights
+        float totalWeights = 0;
+        foreach (float weights in spawnWeights) totalWeights += weights;
+
+        adjustedWeights = new float[spawnWeights.Length];
+        for(int index = 0; index < spawnWeights.Length; index++)
+        {
+            adjustedWeights[index] = (spawnWeights[index] / totalWeights) * 100;
+            if (index > 0)
+            {
+                adjustedWeights[index] += adjustedWeights[index-1];
+            }
+        }
+
         // Spawn Initial enemies up to difficulty cap
         SpawnWave();
         SpawnWave();
@@ -54,13 +78,13 @@ public class EnemySpawner : MonoBehaviour {
         // 25% chance of rocket enemy
         float chance = Random.Range(0, 100);
         int select = 0;
-        if (chance < 40)
-            select = 0;
-        else if (chance > 40 && chance < 75)
-            select = 1;
-        else if (chance > 75)
-            select = 2;
-
+        for(;select < enemies.Length; select++)
+        {
+            if(chance < adjustedWeights[select])
+            {
+                break;
+            }
+        }
 
         GameObject enemy = enemies[select];
         return enemy;

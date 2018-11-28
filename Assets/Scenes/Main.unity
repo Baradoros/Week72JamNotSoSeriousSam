@@ -1911,7 +1911,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4126098577985462, guid: 4dfed2978dd6f4b43a1966326b794353, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -5
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4085432591856458, guid: 4dfed2978dd6f4b43a1966326b794353, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4085432591856458, guid: 4dfed2978dd6f4b43a1966326b794353, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4126098577985462, guid: 4dfed2978dd6f4b43a1966326b794353, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4dfed2978dd6f4b43a1966326b794353, type: 2}
@@ -2676,9 +2688,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 1
   enemies:
-  - {fileID: 1450269416753834, guid: 7039fd66e8550ee43bedb142ab859c3c, type: 2}
-  - {fileID: 1450269416753834, guid: dfcc36a42c515644e9e90cbaca00dd40, type: 2}
-  - {fileID: 1975053920294004, guid: 6b50ec4b53a6aa54994dc2f527c4bb9e, type: 2}
+  - {fileID: 1339719313188916, guid: 3ca82b191964b22428c903208f560fe8, type: 2}
+  - {fileID: 1339719313188916, guid: 3ca82b191964b22428c903208f560fe8, type: 2}
+  - {fileID: 1339719313188916, guid: 3ca82b191964b22428c903208f560fe8, type: 2}
+  - {fileID: 1339719313188916, guid: 3ca82b191964b22428c903208f560fe8, type: 2}
+  spawnWeights:
+  - 40
+  - 30
+  - 20
+  - 10
 --- !u!4 &1191431334
 Transform:
   m_ObjectHideFlags: 0
