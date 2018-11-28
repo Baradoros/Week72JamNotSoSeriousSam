@@ -114,7 +114,7 @@ public class PlayerController : MonoBehaviour {
                 case WeaponSelected.ChainGun:
                     NextFire = Time.time + minigunFireDelay; //Adding firing delay
                     Vector3 spread = GetMousePosition();
-                    // spread.z += UnityEngine.Random.Range(10, -10);
+                    spread.y += UnityEngine.Random.Range(0.5f, -0.5f);
                     Instantiate(bullet, bulletSpawn.position, GetAngleToMouse(bulletSpawn.position, spread)); //Firing bullet here
                     break;
             }

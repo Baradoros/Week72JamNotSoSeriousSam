@@ -8,8 +8,6 @@ public class EnemySpawner : MonoBehaviour {
 
     [Tooltip("Place enemy prefabs to spawn here")]
     public GameObject[] enemies;            // Store enemy prefabs to spawn here and pick one from the array in SpawnWave()
-                                            // Later we'll add functionality to sort by difficulty and such
-
     private float difficulty;                                           // The total ammount of enemies allowed on screen at once
     private List<GameObject> enemyList = new List<GameObject>();
 
@@ -47,6 +45,7 @@ public class EnemySpawner : MonoBehaviour {
     public GameObject GetEnemyFromArray() {
 
         // Functionality to make earlier indexes more likely than later such that the numner of Miniguns > Shotguns > Rockets
+        // I know it's hardcoded don't judge me
         // 40% chance of minigun enemy
         // 35% chance of shotgun enemy
         // 25% chance of rocket enemy
