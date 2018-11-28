@@ -141,19 +141,11 @@ public class GameManager : MonoBehaviour {
     
     // Accepts what level we're on and returns how many enemies we should have
     public float LevelToDifficultyCurve(int level) {
-        // Difficulty curve y = log(2x)
+        // Difficulty curve y = 2^0.25x - 1
+        // x = (log2(y + 1) / 0.25)
 
-        float verticalStretch = 1;             // Raises the difficulty cap
-        float horizontalStretch = 2f;         // Smooths and elongates the difficulty curve
-        float verticalShift = 0;                // Increases starting difficulty
-        float horizontalShift = 0;              // Increases level number that curve starts at (keep at 0)
-
-        // y = a * log(b (x - h)) + k
-        // x is our difficulty so we solve:
-        // x = (10 ^ ((y - k) / a)) / b + h
-        // therefore:
-        float difficulty = (Mathf.Pow(10, ((level - verticalShift) / verticalStretch)) / horizontalStretch) + horizontalShift;
-
+        float difficulty = Mathf.Log((level + 1), 2) / 0.25f;
+        
         return difficulty;
     }
 
