@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using DG.Tweening;
+using UnityEngine.UI;
 
 /// <summary>
 /// This script is meant to hold any methods that are core to the functioning of the game that may need to be called from anywhere.
@@ -19,6 +20,7 @@ public class GameManager : MonoBehaviour {
     public GameObject enemySpawner;
     public GameObject UI;
     public GameObject scoreScreenUI;
+    public Image blackImage;
     public int score = 0;
     public int level = 1;
     public float timeLimit = 60;
@@ -70,6 +72,20 @@ public class GameManager : MonoBehaviour {
         }
     }
 
+    // Called by playercontroller when health == 0
+    public void Lose() {
+        UI.GetComponent<UISlider>().enabled = false;
+        FadeBlack(1);
+    }
+
+    public void FadeBlack(int value) {
+        if (value >= 0 && value <= 1) {
+            blackImage.DOFade(value, 0.5f);
+        } else {
+            Debug.Log("FadeBlack(): Must use value of 0-1");
+        }
+    }
+
     // [!] Anything that needs to happen when the game moves to the scorescreen happens here [!]
     // Called by the timer when time is up
     public void GoToScoreScreen() {
@@ -101,12 +117,15 @@ public class GameManager : MonoBehaviour {
         // We need this method to set everything up to effectively start another level, but without a scene change
         // Enable Main UI and disable Score Screen UI
         UI.SetActive(true);
+        DOTween.RewindAll();
         scoreScreenUI.SetActive(false);
         player.GetComponent<PlayerController>().health = 5;
         player.GetComponent<PlayerController>().ResetHealthImages();
 
         // Reset/Initiate the UISlider to 0
+        
         UISlider slider = UI.GetComponentInChildren<UISlider>();
+        slider.enabled = true;
         if (slider)
         {
             slider.InitSlider();

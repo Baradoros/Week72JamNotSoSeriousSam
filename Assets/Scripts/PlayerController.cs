@@ -75,6 +75,8 @@ public class PlayerController : MonoBehaviour {
         anim = GetComponent<Animator>();
         audio = GetComponent<AudioSource>();
         verticalSpeedModifier = speed * 1.2f;
+
+        GameManager.manager.FadeBlack(0);
     } //End of Start
 
     //Start of Update
@@ -195,7 +197,7 @@ public class PlayerController : MonoBehaviour {
         isFlickering = true;
 
         if (health <= 0) {
-            SceneManager.LoadScene("MainMenu");
+            GameManager.manager.Lose();
         }
     }
 
