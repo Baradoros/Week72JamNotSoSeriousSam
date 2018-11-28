@@ -115,7 +115,6 @@ public class PlayerController : MonoBehaviour {
                     NextFire = Time.time + minigunFireDelay; //Adding firing delay
                     Vector3 spread = GetMousePosition();
                     // spread.z += UnityEngine.Random.Range(10, -10);
-                    Debug.Log(spread);
                     Instantiate(bullet, bulletSpawn.position, GetAngleToMouse(bulletSpawn.position, spread)); //Firing bullet here
                     break;
             }
@@ -171,9 +170,9 @@ public class PlayerController : MonoBehaviour {
     // Animated health bar
     private void DamageHealthImages() {
         if (health > 0) {
-            healthImages[(int)health - 1].DOColor(Color.red, 0.2f);
-            healthImages[(int)health - 1].DOFade(0.0f, 1.0f);
-            healthImages[(int)health - 1].transform.DOScale(3.0f, 1.0f);
+            healthImages[(int)health - 1].DOColor(Color.red, 0.1f);
+            healthImages[(int)health - 1].DOFade(0.0f, 0.3f);
+            healthImages[(int)health - 1].transform.DOScale(5.0f, 0.3f);
         }
     }
 
