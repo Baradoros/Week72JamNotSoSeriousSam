@@ -271,6 +271,7 @@ MonoBehaviour:
   thisRigidbody2D: {fileID: 0}
   playerObject: {fileID: 0}
   health: 5
+  enemyScore: 100
   nextFire: 0
   enemyBullet: {fileID: 1230113872596868, guid: d6934148dee669a4fb11165ab73b39d3,
     type: 2}

@@ -16,7 +16,7 @@ public class TestEnemyShotgun : MonoBehaviour {
 
     //Health and scoring
     public int health = 5;
-    private int enemyScore = 75; // The ammount of score this enemy adds when it dies
+    public int enemyScore = 75; // The ammount of score this enemy adds when it dies
     private bool isDead = false;
     private Vector2 deathPosition;
 

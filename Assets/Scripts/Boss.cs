@@ -16,7 +16,7 @@ public class Boss : MonoBehaviour {
 
     //Health and scoring
     public int health = 50;
-    private int enemyScore = 1000; // The ammount of score this enemy adds when it dies
+    public int enemyScore = 1000; // The ammount of score this enemy adds when it dies
     private bool dead;
 
     #endregion

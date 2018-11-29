@@ -32,6 +32,8 @@ public class PlayerController : MonoBehaviour {
     public Transform bulletSpawn;
     public WeaponSelected weaponSelected = WeaponSelected.SemiAutoCarbine;
     public int[] weaponCost = new int[3];
+
+    [HideInInspector]
     public String[] weaponCostString = new String[3];
 
     [Header("Flicker Player variables")]

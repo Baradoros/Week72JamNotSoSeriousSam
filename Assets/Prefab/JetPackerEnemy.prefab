@@ -264,7 +264,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisRigidbody2D: {fileID: 0}
   playerObject: {fileID: 0}
-  health: 5
+  health: 7
+  enemyScore: 50
   nextFire: 0
   enemyBullet: {fileID: 1483867198666466, guid: 5121a08be5a40814da6cc6f1e5718742,
     type: 2}

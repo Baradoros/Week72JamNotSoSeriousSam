@@ -26,28 +26,23 @@ public class ShopButton : MonoBehaviour {
         text.text = player.weaponCostString[(int)buttonFor];
         if (haveEnoughCredits)
         {
-            if (player.weaponSelected == buttonFor && !isButtonSelected)
+            if (player.weaponSelected == buttonFor )
             {
-                if (button)
+                if (!isButtonSelected)
                 {
                     isButtonSelected = true;
                     button.interactable = false;
                 }
-                else
-                {
-                    Debug.Log("Not connected to Button");
-                }
             }
-            else if (player.weaponSelected != buttonFor && isButtonSelected)
+            else if (player.weaponSelected != buttonFor)
             {
-                if (button)
+                if (isButtonSelected)
                 {
                     isButtonSelected = false;
                     button.interactable = true;
-                }
-                else
+                } else if (!button.interactable)
                 {
-                    Debug.Log("Not connected to Button");
+                    button.interactable = true;
                 }
             }
         } else

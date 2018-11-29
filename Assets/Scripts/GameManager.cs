@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour {
     public GameObject enemySpawner;
     public GameObject UI;
     public GameObject scoreScreenUI;
+    public GameObject LostUI;
     public Image blackImage;
     public GameObject pauseMenu;
     public int score = 0;
@@ -64,6 +65,7 @@ public class GameManager : MonoBehaviour {
         pauseMenu.SetActive(false);
         UI.SetActive(true);
         scoreScreenUI.SetActive(false);
+        if (LostUI) LostUI.SetActive(false);
         DOTween.RewindAll();
 
         // Fade in from black
@@ -116,7 +118,6 @@ public class GameManager : MonoBehaviour {
 
     // Called by playercontroller when health == 0
     public void Lose() {
-
         player.GetComponent<PlayerController>().damagable = false;                                  // Set player invulnerable
         player.GetComponent<PlayerController>().canShoot = false;                                   // Disable shooting
         player.GetComponent<PlayerController>().canMove = false;                                    // Disable movement
@@ -126,9 +127,19 @@ public class GameManager : MonoBehaviour {
         enemySpawner.SetActive(false);
 
         UI.GetComponent<UISlider>().enabled = false;
+        mainCamera.GetComponent<AudioSource>().volume = 0;
 
+        // Set cursor texture back to default
+        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
         FadeBlack(1);
-        LoadScene("MainMenu", 1);
+
+        if (LostUI)
+        {
+            LostUI.SetActive(true);
+        } else
+        {
+            LoadScene("MainMenu", 1.5f);
+        }
     }
 
     public void FadeBlack(int value) {
