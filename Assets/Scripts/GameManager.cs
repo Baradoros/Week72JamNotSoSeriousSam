@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour {
     public GameObject UI;
     public GameObject scoreScreenUI;
     public Image blackImage;
+    public GameObject pauseMenu;
     public int score = 0;
     public int level = 1;
     public float timeLimit = 60;
@@ -35,6 +36,8 @@ public class GameManager : MonoBehaviour {
     public Vector3 mainAreaLocation = new Vector3(0f, 0f, -10f);
     public Vector3 scoreAreaLocation = new Vector3();
     public float lerpSpeed;
+
+    private bool pausable = true;
 
     void Start() {
 
@@ -56,10 +59,15 @@ public class GameManager : MonoBehaviour {
             Cursor.SetCursor(cursorTexture, cursorOffset, CursorMode.Auto);
         }
 
+
         // Ensure Main UI is active and Scorescreen UI is inactive
+        pauseMenu.SetActive(false);
         UI.SetActive(true);
         scoreScreenUI.SetActive(false);
         DOTween.RewindAll();
+
+        // Fade in from black
+        FadeBlack(0);
 
         //Reset/Initiate the UISlider to 0
         UISlider slider = UI.GetComponentInChildren<UISlider>();
@@ -70,6 +78,39 @@ public class GameManager : MonoBehaviour {
         {
             Debug.Log("No UISlider found");
         }
+    }
+
+    private void Update() {
+        if (Input.GetKeyDown(KeyCode.Escape) && !pauseMenu.activeInHierarchy && pausable) {
+            PauseGame();
+            pausable = false;
+        }
+        if (Input.GetKeyDown(KeyCode.Escape) && pauseMenu.activeInHierarchy && pausable) {
+            ContinueGame();
+            pausable = false;
+        }
+        if (Input.GetKeyUp(KeyCode.Escape))
+            pausable = true;
+    }
+
+    public void ContinueGame() {
+        UI.SetActive(true);
+        Time.timeScale = 1.0f;
+        pauseMenu.SetActive(false);
+    }
+
+    public void PauseGame() {
+        pauseMenu.SetActive(true);
+        Time.timeScale = 0.0f;
+    }
+
+    public void RestartGame() {
+        LoadScene("Main", 0);
+    }
+
+    public void QuitToMenu() {
+        ContinueGame();
+        LoadScene("MainMenu", 0);
     }
 
     // Called by playercontroller when health == 0
@@ -84,6 +125,7 @@ public class GameManager : MonoBehaviour {
         enemySpawner.SetActive(false);
 
         UI.GetComponent<UISlider>().enabled = false;
+
         FadeBlack(1);
         LoadScene("MainMenu", 1);
     }

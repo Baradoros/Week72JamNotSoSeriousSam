@@ -76,7 +76,6 @@ public class PlayerController : MonoBehaviour {
         audio = GetComponent<AudioSource>();
         verticalSpeedModifier = speed * 1.2f;
 
-        GameManager.manager.FadeBlack(0);
     } //End of Start
 
     //Start of Update
