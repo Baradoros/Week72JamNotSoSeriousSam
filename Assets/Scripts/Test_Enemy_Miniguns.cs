@@ -88,7 +88,7 @@ public class Test_Enemy_Miniguns : MonoBehaviour {
     {
 
         // Check if HP <= 0 and kill this enemy if true
-        if (health <= 0)
+        if (health <= 0 && !isDead)
         {
             isDead = true;
             deathPosition = thisRigidbody2D.position;

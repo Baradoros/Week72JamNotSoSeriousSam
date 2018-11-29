@@ -17,7 +17,7 @@ public class TestEnemyRocket : MonoBehaviour
 
     //Health and scoring
     public int health = 5;
-    private int enemyScore = 50; // The ammount of score this enemy adds when it dies
+    private int enemyScore = 100; // The ammount of score this enemy adds when it dies
     private bool isDead = false;
     private Vector2 deathPosition;
 
@@ -102,7 +102,7 @@ public class TestEnemyRocket : MonoBehaviour
     private void Update()
     {
         // Check if HP <= 0 and kill this enemy if true
-        if (health <= 0)
+        if (health <= 0 && !isDead)
         {
             isDead = true;
             deathPosition = thisRigidbody2D.position;

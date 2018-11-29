@@ -99,7 +99,7 @@ public class JetpackerEnemy : MonoBehaviour {
     private void Update()
     {
         // Check if HP <= 0 and kill this enemy if true
-        if (health <= 0)
+        if (health <= 0 && !isDead)
         {
             isDead = true;
             deathPosition = thisRigidbody2D.position;

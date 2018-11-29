@@ -6,9 +6,9 @@ public class EnemySpawner : MonoBehaviour {
 
     public int level;
 
-    [Tooltip("Place enemy prefabs to spawn here")]
+    [Tooltip("Place enemy prefabs to spawn here. Last must be the boss.")]
     public GameObject[] enemies;            // Store enemy prefabs to spawn here and pick one from the array in SpawnWave()
-    [Tooltip("Spawn weights for the enemies in enemies list")]
+    [Tooltip("Spawn weights for the enemies in enemies list. Boss weight doesn't matter")]
     public float[] spawnWeights;
 
     private float[] adjustedWeights;
@@ -91,11 +91,26 @@ public class EnemySpawner : MonoBehaviour {
 
     // Spawn a wave of enemies = half the difficulty
     private void SpawnWave() {
-        // Debug.Log("Spawning " + difficulty / 2 + " enemies");
-        for (int i = 0; i < difficulty / 2.0f; i++) {
-            GameObject enemy = Instantiate(GetEnemyFromArray(), new Vector3(this.transform.position.x + Random.Range(-2, 2), this.transform.position.y, 0), Quaternion.identity);
-            enemyList.Add(enemy);
-        }
+        if (level % 5 != 0)
+        {
+         Debug.Log("Spawning " + difficulty / 2 + " enemies");
+        Debug.Log(difficulty);
+            for (int i = 0; i < difficulty / 2.0f; i++)
+            {
+                GameObject enemy = Instantiate(GetEnemyFromArray(), new Vector3(this.transform.position.x + Random.Range(-2, 2), this.transform.position.y, 0), Quaternion.identity);
+                enemyList.Add(enemy);
+            }
+       } else
+       {
+           if(enemyList.Count == 0)
+           {
+                for (int count = 0; count < Mathf.FloorToInt(difficulty / 10); count++)
+                {
+                    GameObject enemy = Instantiate(enemies[enemies.Length - 1], new Vector3(this.transform.position.x + Random.Range(-2, 2), this.transform.position.y, 0), Quaternion.identity);
+                    enemyList.Add(enemy);
+                }
+           }
+       }
     }
 
     public void ClearEnemies() {

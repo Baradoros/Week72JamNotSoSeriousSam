@@ -18,7 +18,6 @@ public class ScoreRollUp : MonoBehaviour {
         if (rollScore) {
             initialScore = Mathf.Lerp(initialScore, score, 5 * Time.deltaTime);
             this.GetComponent<Text>().text = "Credits " + Mathf.RoundToInt(initialScore).ToString().PadLeft(5, '0');
-
         }
 	}
 
