@@ -57,6 +57,8 @@ public class GameManager : MonoBehaviour {
         }
 
         // Ensure Main UI is active and Scorescreen UI is inactive
+        if (!UI) Debug.Log("UI is null");
+        if (!scoreScreenUI) Debug.Log("scoreScreenUI is null");
         UI.SetActive(true);
         scoreScreenUI.SetActive(false);
         DOTween.RewindAll();
@@ -162,7 +164,7 @@ public class GameManager : MonoBehaviour {
         player.GetComponent<Rigidbody2D>().velocity = Vector3.zero;                                 // Zero out velocity
 
         //enable enemyspawner
-        enemySpawner.SetActive(true);
+        StartCoroutine(StartEnemySpawnerDelayed(0.5f)); //Enemies spawn only after a preset seconds (breather time)
 
         // Set cursor texture back to default
         Cursor.SetCursor(cursorTexture, cursorOffset, CursorMode.ForceSoftware);
@@ -194,6 +196,11 @@ public class GameManager : MonoBehaviour {
         else {
             SceneManager.LoadScene(name, LoadSceneMode.Single);
         }
+    }
+    private IEnumerator StartEnemySpawnerDelayed(float time)
+    {
+        yield return new WaitForSeconds(time);
+        enemySpawner.SetActive(true);
     }
 
     public void Quit() {
