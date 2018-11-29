@@ -61,12 +61,7 @@ public class GameManager : MonoBehaviour {
 
 
         // Ensure Main UI is active and Scorescreen UI is inactive
-
         pauseMenu.SetActive(false);
-
-        if (!UI) Debug.Log("UI is null");
-        if (!scoreScreenUI) Debug.Log("scoreScreenUI is null");
-
         UI.SetActive(true);
         scoreScreenUI.SetActive(false);
         DOTween.RewindAll();

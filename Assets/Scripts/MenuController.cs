@@ -13,7 +13,7 @@ public class MenuController : MonoBehaviour {
     {
         GameManager.manager.blackImage.enabled = true;
         GameManager.manager.FadeBlack(1);
-        GameManager.manager.LoadScene("Main", 1.5f);
+        GameManager.manager.LoadScene("StoryScreen", 1.5f);
     }
 
     public void QuitGame()
