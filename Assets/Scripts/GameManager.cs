@@ -110,6 +110,7 @@ public class GameManager : MonoBehaviour {
     }
 
     public void RestartGame() {
+        ContinueGame();
         LoadScene("Main", 0);
     }
 
