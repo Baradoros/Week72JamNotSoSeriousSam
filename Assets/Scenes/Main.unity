@@ -3412,6 +3412,21 @@ Prefab:
       propertyPath: healthImages.Array.data[8]
       value: 
       objectReference: {fileID: 948550246}
+    - target: {fileID: 114468235458027546, guid: 501e1df226e21694f9edf651d186ff88,
+        type: 2}
+      propertyPath: weaponCost.Array.data[1]
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114468235458027546, guid: 501e1df226e21694f9edf651d186ff88,
+        type: 2}
+      propertyPath: weaponCost.Array.data[2]
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114468235458027546, guid: 501e1df226e21694f9edf651d186ff88,
+        type: 2}
+      propertyPath: cashOut
+      value: 
+      objectReference: {fileID: 8300000, guid: e686e5800e5ae41408edbdcf99bda8fe, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 501e1df226e21694f9edf651d186ff88, type: 2}
   m_IsPrefabAsset: 0

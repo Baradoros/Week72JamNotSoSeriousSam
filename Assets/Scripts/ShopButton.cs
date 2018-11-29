@@ -7,34 +7,52 @@ public class ShopButton : MonoBehaviour {
 
     public PlayerController player;
     public PlayerController.WeaponSelected buttonFor;
+    private Button button;
+    private Text text;
 
+    private bool haveEnoughCredits;
     private bool isButtonSelected;
+
+    void Start()
+    {
+        button = gameObject.GetComponentInChildren<Button>();
+        text = gameObject.GetComponentInChildren<Text>();
+    }
+
+
 	// Update is called once per frame
 	void Update () {
-        if (player.weaponSelected == buttonFor && !isButtonSelected)
+        haveEnoughCredits = player.weaponCost[(int)buttonFor] <= GameManager.manager.score;
+        text.text = player.weaponCostString[(int)buttonFor];
+        if (haveEnoughCredits)
         {
-            Button button = gameObject.GetComponentInChildren<Button>();
-            if (button)
+            if (player.weaponSelected == buttonFor && !isButtonSelected)
             {
-                isButtonSelected = true;
-                button.interactable = false;
-            } else
-            {
-                Debug.Log("Not connected to Button");
+                if (button)
+                {
+                    isButtonSelected = true;
+                    button.interactable = false;
+                }
+                else
+                {
+                    Debug.Log("Not connected to Button");
+                }
             }
-        }
-        else if(player.weaponSelected != buttonFor && isButtonSelected)
+            else if (player.weaponSelected != buttonFor && isButtonSelected)
+            {
+                if (button)
+                {
+                    isButtonSelected = false;
+                    button.interactable = true;
+                }
+                else
+                {
+                    Debug.Log("Not connected to Button");
+                }
+            }
+        } else
         {
-            Button button = gameObject.GetComponentInChildren<Button>();
-            if (button)
-            {
-                isButtonSelected = false;
-                button.interactable = true;
-            }
-            else
-            {
-                Debug.Log("Not connected to Button");
-            }
+            button.interactable = false;
         }
-	}
+    }
 }

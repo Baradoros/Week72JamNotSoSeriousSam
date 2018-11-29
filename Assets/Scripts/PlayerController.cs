@@ -31,6 +31,8 @@ public class PlayerController : MonoBehaviour {
     public GameObject bullet;
     public Transform bulletSpawn;
     public WeaponSelected weaponSelected = WeaponSelected.SemiAutoCarbine;
+    public int[] weaponCost = new int[3];
+    public String[] weaponCostString = new String[3];
 
     [Header("Flicker Player variables")]
     public SpriteRenderer spriteRenderer; //To be used for the flicker effect
@@ -43,6 +45,7 @@ public class PlayerController : MonoBehaviour {
 
     [Space]
     public AudioClip rev;
+    public AudioClip cashOut;
 
     // Stores the images used for health
     public Image[] healthImages;
@@ -75,12 +78,14 @@ public class PlayerController : MonoBehaviour {
         anim = GetComponent<Animator>();
         audio = GetComponent<AudioSource>();
         verticalSpeedModifier = speed * 1.2f;
-
+        UpdateWeaponCostString();
     } //End of Start
 
     //Start of Update
     private void Update()
     {
+        UpdateWeaponCostString();
+
         // Set animation trigger for wheelie
         anim.SetFloat("Speed", Input.GetAxis("Horizontal"));
 
@@ -200,6 +205,30 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
+    public void UpdateWeaponCostString()
+    {
+           
+        for (int index = 0; index < 3; index++)
+        {
+            if (index == (int)weaponSelected )
+            {
+                if (weaponCostString[(int)weaponSelected] != "Selected")
+                {
+                    weaponCostString[index] = "Selected";
+                }
+            }
+            else if (weaponCost[index] == 0 )
+            {
+                if (weaponCostString[index] != "Purchased") {
+                    weaponCostString[index] = "Purchased";
+                }
+            } else if (weaponCostString[index] != "Credits " + weaponCost[index])
+            {
+                weaponCostString[index] = "Credits " + weaponCost[index];
+            }
+        }
+
+    }
     #endregion
 
     #region Custom Functions
@@ -238,16 +267,37 @@ public class PlayerController : MonoBehaviour {
     /// </summary>
     public void SelectWeaponCarbine()
     {
+        int index = (int)WeaponSelected.SemiAutoCarbine;
+        if (weaponCost[index] != 0)
+        {
+            GameManager.manager.score -= weaponCost[index];
+            weaponCost[index] = 0;
+            audio.PlayOneShot(cashOut);
+        }
         weaponSelected = WeaponSelected.SemiAutoCarbine;
     }
 
     public void SelectWeaponShotgun()
     {
+        int index = (int)WeaponSelected.Shotgun;
+        if (weaponCost[index] != 0)
+        {
+            GameManager.manager.score -= weaponCost[index];
+            weaponCost[index] = 0;
+            audio.PlayOneShot(cashOut);
+        }
         weaponSelected = WeaponSelected.Shotgun;
     }
 
     public void SelectWeaponChainGun()
     {
+        int index = (int)WeaponSelected.ChainGun;
+        if (weaponCost[index] != 0)
+        {
+            GameManager.manager.score -= weaponCost[index];
+            weaponCost[index] = 0;
+            audio.PlayOneShot(cashOut);
+        }
         weaponSelected = WeaponSelected.ChainGun;
     }
 

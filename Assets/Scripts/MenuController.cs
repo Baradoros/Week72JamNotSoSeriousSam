@@ -16,6 +16,16 @@ public class MenuController : MonoBehaviour {
         GameManager.manager.LoadScene("StoryScreen", 1.5f);
     }
 
+    public void GoToInstructions()
+    {
+        GameManager.manager.LoadScene("Instructions", 0f);
+    }
+
+    public void GoToCredits()
+    {
+        GameManager.manager.LoadScene("Credits", 0f);
+    }
+
     public void QuitGame()
     {
         GameManager.manager.Quit();
