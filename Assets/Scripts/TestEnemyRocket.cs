@@ -5,7 +5,8 @@
 /// A script attached to Test_Enemy_Shotgun GameObject. It is responsible for handling the
 /// movement, shooting and health of the enemy.
 /// </summary>
-public class TestEnemyRocket : MonoBehaviour {
+public class TestEnemyRocket : MonoBehaviour
+{
 
     #region This Object's Variables and Player Variables
 
@@ -17,6 +18,8 @@ public class TestEnemyRocket : MonoBehaviour {
     //Health and scoring
     public int health = 5;
     private int enemyScore = 50; // The ammount of score this enemy adds when it dies
+    private bool isDead = false;
+    private Vector2 deathPosition;
 
     #endregion
 
@@ -70,7 +73,8 @@ public class TestEnemyRocket : MonoBehaviour {
     #region Built in Functions
 
     //Start of Awake
-    private void Awake() {
+    private void Awake()
+    {
         //This Object references
         thisRigidbody2D = GetComponent<Rigidbody2D>(); //Setting this Rigidbody2D values here
         playerObject = GameObject.FindGameObjectWithTag("Player"); //Find Player by tag and passing it here. To be used to locate player for shooting
@@ -88,40 +92,57 @@ public class TestEnemyRocket : MonoBehaviour {
     } //End of Awake
 
     // Use this for initialization
-    private void Start() {
+    private void Start()
+    {
         time2Move = Random.Range(1.0f, 2.0f); //Giving a random value to time2Move
         nextFire = Random.Range(1.5f, 2.0f); //Giving a random firing rate here
     } //End of Start
 
     // Update is called once per frame
-    private void Update() {
+    private void Update()
+    {
         // Check if HP <= 0 and kill this enemy if true
-        if (health <= 0) {
+        if (health <= 0)
+        {
+            isDead = true;
+            deathPosition = thisRigidbody2D.position;
+            deathPosition.x = -12;
             Die();
         }
     }
 
     //Start of FixedUpdate
-    private void FixedUpdate() {
-        nextFire -= Time.deltaTime; //Subtracting Time.deltaTime to move Next Fire towards zero.
-
-        //Running this only when nextFire is less than zero and enemy has reached starting point
-        if (nextFire < 0 && reachedStart) {
-            ShootBullet(); //Calling ShootBullet here
-        } //End of if statement
-
-        if (!reachedStart) //Runs only if reachedStart is false
+    private void FixedUpdate()
+    {
+        if (!isDead)
         {
-            MoveToStartingPoint(); //Calling MoveTOStartingPoint here
-        } //End of if statement
-        else if (time2Move >= 0) //Run only If reachedStart is false and time2Move is greater than zero
+            nextFire -= Time.deltaTime; //Subtracting Time.deltaTime to move Next Fire towards zero.
+
+            //Running this only when nextFire is less than zero and enemy has reached starting point
+            if (nextFire < 0 && reachedStart)
+            {
+                ShootBullet(); //Calling ShootBullet here
+            } //End of if statement
+
+            if (!reachedStart) //Runs only if reachedStart is false
+            {
+                MoveToStartingPoint(); //Calling MoveTOStartingPoint here
+            } //End of if statement
+            else if (time2Move >= 0) //Run only If reachedStart is false and time2Move is greater than zero
+            {
+                MoveToRandomPoint(); //Calling MoveToRandomPoint here
+            } //End of else statement
+        }
+        else
         {
-            MoveToRandomPoint(); //Calling MoveToRandomPoint here
-        } //End of else statement
+            MoveToDeathPoint();
+        }
     } //End of FixedUpdate
 
-    private void OnCollisionEnter2D(Collision2D collision) {
-        if (collision.gameObject.layer == 11) {
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == 11)
+        {
             // Player layers start at 8, 11 is PlayerProjectile
             TakeDamage(1);
         }
@@ -132,7 +153,8 @@ public class TestEnemyRocket : MonoBehaviour {
     #region Custom Functions
 
     //A simple function that will move THIS enemy to the Starting Point
-    public void MoveToStartingPoint() {
+    public void MoveToStartingPoint()
+    {
         starting_Point_Coordinates = new Vector2(starting_Points.enemy_Starting_Points[starting_Point].position.x,
             starting_Points.enemy_Starting_Points[starting_Point].position.y); //Getting the coordinates here
 
@@ -141,7 +163,8 @@ public class TestEnemyRocket : MonoBehaviour {
         thisRigidbody2D.MovePosition(movementDirection); //Moving enemy to starting point here
 
         //And if statement that runs when this objects and starting_Point_Coordinates magnitude is less than 0.25
-        if ((thisRigidbody2D.position - starting_Point_Coordinates).magnitude < 0.25f) {
+        if ((thisRigidbody2D.position - starting_Point_Coordinates).magnitude < 0.25f)
+        {
             reachedStart = true; //Turning reachedStart to true here. Used to allow random movement and turn this function calling off
         } //End of if statement
     } //End of MoveToStartingPoint
@@ -151,7 +174,8 @@ public class TestEnemyRocket : MonoBehaviour {
     /// it is responsible for moving the player towards the random point and is responsible for changing the
     /// points as well
     /// </summary>
-    public void MoveToRandomPoint() {
+    public void MoveToRandomPoint()
+    {
         time2Move -= Time.deltaTime; // Subtracting Time.deltaTime from time2Move to reduce its value
 
         random_Point_Coordinates = new Vector2(random_Points.enemy_Random_Points[random_Point].position.x,
@@ -167,11 +191,17 @@ public class TestEnemyRocket : MonoBehaviour {
         } //End of if statement
     } //End of MoveToRandomPoint
 
+    private void MoveToDeathPoint()
+    {
+        movementDirection = Vector2.MoveTowards(thisRigidbody2D.position, deathPosition, 3f * Time.deltaTime);
+        thisRigidbody2D.MovePosition(movementDirection); //Moving enemy to deathposition
+    }
     /// <summary>
     /// A function that will be called every time nextFire will turn zero.
     /// This will fire a bullet
     /// </summary>
-    public void ShootBullet() {
+    public void ShootBullet()
+    {
         Vector3 dir = playerObject.transform.position - bulletSpawner.position;
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
@@ -185,22 +215,28 @@ public class TestEnemyRocket : MonoBehaviour {
         audioSource.Play();
 
         //Using this if statement to set a new value for NextFire
-        if (nextFire <= 0) {
+        if (nextFire <= 0)
+        {
             nextFire = Random.Range(1.5f, 2.0f);
         } //End of if statement
     } //End of ShootBullet
 
     // Method to deal damage to this enemy
-    public void TakeDamage(int damage) {
+    public void TakeDamage(int damage)
+    {
         health -= damage;
     }
 
     // Method called when this enemy reaches 0HP
-    public void Die() {
+    public void Die()
+    {
         GameManager.manager.score += enemyScore;
-        Destroy(gameObject);
+        PolygonCollider2D collider = gameObject.GetComponent<PolygonCollider2D>();
+        Destroy(collider); //So that the enemy doesn't absorb bullets
+        Animator anim = gameObject.GetComponent<Animator>();
+        anim.SetBool("isDead", true);
+        Destroy(gameObject, 1.2f); //Time for animation to finish
     }
-
     #endregion
-
 }
+

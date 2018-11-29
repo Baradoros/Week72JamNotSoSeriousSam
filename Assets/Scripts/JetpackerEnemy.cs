@@ -14,6 +14,8 @@ public class JetpackerEnemy : MonoBehaviour {
     //Health and scoring
     public int health = 5;
     private int enemyScore = 50; // The ammount of score this enemy adds when it dies
+    private bool isDead = false;
+    private Vector2 deathPosition;
 
     #endregion
 
@@ -99,6 +101,9 @@ public class JetpackerEnemy : MonoBehaviour {
         // Check if HP <= 0 and kill this enemy if true
         if (health <= 0)
         {
+            isDead = true;
+            deathPosition = thisRigidbody2D.position;
+            deathPosition.x = -12;
             Die();
         }
     }
@@ -106,22 +111,28 @@ public class JetpackerEnemy : MonoBehaviour {
     //Start of FixedUpdate
     private void FixedUpdate()
     {
-        nextFire -= Time.deltaTime; //Subtracting Time.deltaTime to move Next Fire towards zero.
+        if (!isDead)
+        {
+            nextFire -= Time.deltaTime; //Subtracting Time.deltaTime to move Next Fire towards zero.
 
-        //Running this only when nextFire is less than zero and enemy has reached starting point
-        if (nextFire < 0 && reachedStart)
-        {
-            ShootBullet(); //Calling ShootBullet here
-        } //End of if statement
+            //Running this only when nextFire is less than zero and enemy has reached starting point
+            if (nextFire < 0 && reachedStart)
+            {
+                ShootBullet(); //Calling ShootBullet here
+            } //End of if statement
 
-        if (!reachedStart) //Runs only if reachedStart is false
+            if (!reachedStart) //Runs only if reachedStart is false
+            {
+                MoveToFirstRandomPoint();
+            } //End of if statement
+            else if (time2Move >= 0) //Run only If reachedStart is false and time2Move is greater than zero
+            {
+                MoveToRandomPoint(); //Calling MoveToRandomPoint here
+            } //End of else statement
+        } else
         {
-            MoveToFirstRandomPoint();
-        } //End of if statement
-        else if (time2Move >= 0) //Run only If reachedStart is false and time2Move is greater than zero
-        {
-            MoveToRandomPoint(); //Calling MoveToRandomPoint here
-        } //End of else statement
+            MoveToDeathPoint(); //Move back to give a stopped effect
+        }
     } //End of FixedUpdate
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -184,6 +195,12 @@ public class JetpackerEnemy : MonoBehaviour {
         } //End of if statement
     } //End of MoveToRandomPoint
 
+    private void MoveToDeathPoint()
+    {
+        movementDirection = Vector2.MoveTowards(thisRigidbody2D.position, deathPosition, 3f * Time.deltaTime);
+        thisRigidbody2D.MovePosition(movementDirection); //Moving enemy to deathposition
+    }
+
     /// <summary>
     /// A function that will be called every time nextFire will turn zero.
     /// This will fire a bullet
@@ -219,8 +236,11 @@ public class JetpackerEnemy : MonoBehaviour {
     public void Die()
     {
         GameManager.manager.score += enemyScore;
-        Destroy(gameObject);
+        PolygonCollider2D collider = gameObject.GetComponent<PolygonCollider2D>();
+        Destroy(collider); //So that the Jetpacker doesn't absorb bullets
+        Animator anim = gameObject.GetComponent<Animator>();
+        anim.SetBool("isDead", true);
+        Destroy(gameObject, 1.2f); //Time for animation to finish
     }
-
     #endregion
 }
