@@ -74,8 +74,18 @@ public class GameManager : MonoBehaviour {
 
     // Called by playercontroller when health == 0
     public void Lose() {
+
+        player.GetComponent<PlayerController>().damagable = false;                                  // Set player invulnerable
+        player.GetComponent<PlayerController>().canShoot = false;                                   // Disable shooting
+        player.GetComponent<PlayerController>().canMove = false;                                    // Disable movement
+
+        // Clear all enemies and disable enemyspawner
+        enemySpawner.GetComponent<EnemySpawner>().ClearEnemies();
+        enemySpawner.SetActive(false);
+
         UI.GetComponent<UISlider>().enabled = false;
         FadeBlack(1);
+        LoadScene("MainMenu", 1);
     }
 
     public void FadeBlack(int value) {
@@ -152,7 +162,6 @@ public class GameManager : MonoBehaviour {
         player.GetComponent<Rigidbody2D>().velocity = Vector3.zero;                                 // Zero out velocity
 
         //enable enemyspawner
-        StartCoroutine(LoadSceneDelayed(3f)); //Enemies spawn only after a preset seconds
         enemySpawner.SetActive(true);
 
         // Set cursor texture back to default
@@ -172,7 +181,7 @@ public class GameManager : MonoBehaviour {
     }
 
     // Used by LoadScene() to delay scene loading
-    private IEnumerator LoadSceneDelayed(float time) {
+    private IEnumerator LoadSceneDelayed(string name, float time) {
         yield return new WaitForSeconds(time);
         SceneManager.LoadScene(name, LoadSceneMode.Single);
     }
@@ -180,7 +189,7 @@ public class GameManager : MonoBehaviour {
     // Streamline scene loading
     public void LoadScene(string name, float delay) {
         if (delay > 0) {
-            StartCoroutine(LoadSceneDelayed(delay));
+            StartCoroutine(LoadSceneDelayed(name, delay));
         }
         else {
             SceneManager.LoadScene(name, LoadSceneMode.Single);

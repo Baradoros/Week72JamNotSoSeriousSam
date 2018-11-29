@@ -18,7 +18,6 @@ public class EnemySpawner : MonoBehaviour {
 	void Start () {
         level = GameManager.manager.level;
         difficulty = GameManager.manager.LevelToDifficultyCurve(level);
-        Debug.Log("Difficulty: " + difficulty);
 
         if(enemies.Length != spawnWeights.Length)
         {
