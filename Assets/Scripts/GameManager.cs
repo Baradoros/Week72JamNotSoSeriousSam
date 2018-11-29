@@ -162,7 +162,7 @@ public class GameManager : MonoBehaviour {
         player.GetComponent<PlayerController>().damagable = false;                                  // Set player invulnerable
         player.GetComponent<PlayerController>().canShoot = false;                                   // Disable shooting
         player.GetComponent<PlayerController>().canMove = false;                                    // Disable movement
-        player.transform.DOMove(new Vector3(4, -3, player.transform.position.z), lerpSpeed, false); // Move player to predetermined point for score screen
+        player.transform.DOMove(new Vector3(3.5f, -3, player.transform.position.z), lerpSpeed, false); // Move player to predetermined point for score screen
         player.GetComponent<Rigidbody2D>().velocity = Vector3.zero;                                 // Zero out velocity
 
         // Clear all enemies and disable enemyspawner
